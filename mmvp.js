@@ -1,4 +1,4 @@
-var Mmmvc = (function(my) {
+var Mmvp = (function(my) {
   var actions = {
     add      : function() {},
     remove   : function() {},
