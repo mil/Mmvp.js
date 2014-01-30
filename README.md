@@ -1,5 +1,5 @@
-Mmmvc.js
+Mmvp.js
 ========
-MVC does not have to be complicated.  Mmmvc.js is a proof of concept JS MVC in 39 SLOC.
+MVC/MVP does not have to be complicated.  Mmvp.js is a proof of concept JS MVP in 44 SLOC.
 
 Guide coming soon.
