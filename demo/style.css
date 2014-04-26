@@ -43,6 +43,7 @@ body {
 
 a {
   text-decoration: none;
+  color: #002369;
 }
 
 nav#sidebar {
@@ -61,8 +62,6 @@ nav#sidebar {
 nav#sidebar a {
   display: inline-block;
   color: #888888;
-  padding: 2px;
-  margin: 2px 0;
   font-size: 12px;
   text-decoration: none;
 }
@@ -118,26 +117,32 @@ hr {
 main section#demo nav {
   margin-top: 10px;
   margin-bottom: 10px;
+  line-height: 16px;
   clear: both;
-  text-align: right;
 }
 main section#demo nav div {
   display: inline-block;
 }
 
 main section#demo nav div.app {
-  border-right: 1px dotted #cfcfcf; 
-  margin-right: 10px;
-  padding-right: 10px;
 }
 
 
+.sidebar {
+  float: left;
+  width: 80px;
+  margin-left: -100px;
+  text-align: right;
+  padding-right: 20px;
+}
+
 main section#demo nav h2 {
-  display: inline-block;
+  display: block;
   padding: 0 3px;
-  color: #353535;
+  color: #c1c1c1;
   font-weight: normal;
   cursor: pointer;
+  width: auto;
 }
 main section#demo nav h2:first-child {
   padding-left: 0;
@@ -147,6 +152,7 @@ main section#demo nav.src h2:last-child {
 }
 main section#demo nav h2.active {
   font-weight: bold;
+  color: #888888;
 }
 
 section#switcher {

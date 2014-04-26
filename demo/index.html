@@ -13,31 +13,35 @@
 
 <body>
 <nav id='sidebar'>
-  <h1>Mmvp.js</h1>
-  <a href="http://userbound.com/mil/mmvp.js">Gh</a>
-  <a href="">Minified</a>
+  
 </nav>
 <main>
+  <h1>Mmvp.js</h1>
+  <a href="">Docs</a>
+  <a href="http://userbound.com/mil/mmvp.js">Source</a>
+
 <section id="overview">
-  <h2>Overview</h2>
+  <div class='sidebar'>
+    <h2>Overview</h2>
+  </div>
   <p><a href="#">Front</a>-<a href="#">end</a> <a href="#">frameworks</a>, in process of providing Model-to-View binding architecture, bundle along DOM buttresses, templating engines, UI widgets, among other components. Most front-end framework define <i>how</i> you should and can and should build your application presentation logic.</p>
   <p>Mmvp.js takes an alternative approach. Aiming for presenter malleability, you bind <code>empty</code>, <code>populate</code>, <code>add</code>, <code>remove</code>, and <code>update</code> callbacks to perform templating, DOM manipulation, and your other presentation logic for when changes in your model occur. Periodically re-<code>sync</code> the presenter, and that's all there is to it.</p>
 </section>
-<hr/>
 <section id="demo">
-  <h2>Demo</h2>
-  <nav>
-    <div class='app'>
-      <h2 class='view active'>View</h2>
-      <h2 class='model'>Model</h2>
-    </div><div class='src'>
-      <h2 class='implementation'>Todo.js</h2>
-      <h2 class='source'>Mmvp.js</h2>
-    </div>
-  </nav>
+  <div class='sidebar'>
+    <h2>Demo</h2>
+    <nav>
+      <div class='app'>
+        <h2 class='view active'>View</h2>
+        <h2 class='model'>Model</h2>
+      </div><div class='src'>
+        <h2 class='implementation'>Todo.js</h2>
+        <h2 class='source'>Mmvp.js</h2>
+      </div>
+    </nav>
+  </div>
 
-  <section id='switcher'>
-      
+  <section id='switcher'> 
     <section class='view active'>  
       <div id="viewpen"></div>
       <div id='buttons'>
