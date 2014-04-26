@@ -56,6 +56,7 @@ nav#sidebar {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+
 }
 nav#sidebar a {
   display: inline-block;
@@ -122,6 +123,7 @@ main section#demo nav h2 {
   padding: 0 3px;
   color: #353535;
   font-weight: normal;
+  cursor: pointer;
 }
 main section#demo nav h2:first-child {
   padding-left: 0;
@@ -137,9 +139,33 @@ main section#demo nav h2.active {
 section#switcher {
   padding: 10px;
   border: 1px dotted #cfcfcf;
+  display: table;
+  width: 100%;
+ 
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+section#switcher section {
+  display: none;
+}
+section#switcher section.active {
+  display: table-cell;
+  vertical-align: middle;
+  height: 200px;
 }
 section#switcher #buttons {
-  float: right;
+}
+
+section#switcher section.view {
+  text-align: center;
+}
+section#switcher section.view #viewpen {
+  font-size: 14px;
+}
+section#switcher section.view #viewpen p { margin: 0; }
+section#switcher section.view #viewpen h3 {
+  font-size: 18px;
 }
 
 

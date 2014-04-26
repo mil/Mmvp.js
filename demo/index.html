@@ -20,8 +20,8 @@
 <main>
 <section id="overview">
   <h2>Overview</h2>
-  <p>Front-end frameworks <sub>(<a href="#">Backbone</a>, <a href="#">Angular</a>, <a href="#">Ember</a>)</sub> in the process of giving you MV* architecture, bundle along things like: DOM manipulation, templating engines, and semantics. Mmvp.js takes a diffrent approach by  cutting off the cruft.</p>
-  <p>With Mmvp.js, you bind <code>empty</code>, <code>populate</code>, <code>add</code>, <code>remove</code>, and <code>update</code> actions (JS callbacks) with your presentation logic (templating, DOM manipulation, etc). You periodically re-<code>sync</code> the model, that's it. Mmvp.js, the micro model-view-presenter sans the cruft!</p>
+  <p>Front-end frameworks <sub>(<a href="#">Backbone</a>, <a href="#">Angular</a>, <a href="#">Ember</a>)</sub> in the process of giving you MV* architecture, bundle along things like: DOM buttresses, templating engines, and DOM-presentantion politics. But, should you're MV* framework provide, or even know about the DOM?</p>
+  <p>With Mmvp.js, you bind <code>empty</code>, <code>populate</code>, <code>add</code>, <code>remove</code>, and <code>update</code> actions as JS callbacks containing your presentation logic (templating, DOM manipulation, etc) and periodically re-<code>sync</code> the model. That's all there is to it. Mmvp.js, the micro model-view-presenter sans the cruft!</p>
 </section>
 <section id="demo">
   <nav>
@@ -35,19 +35,23 @@
     </div>
   </nav>
   <section id='switcher'>
-    <div class='view active'>  
+      
+    <section class='view active'>  
+      <div id="viewpen"></div>
       <div id='buttons'>
         <button id='add'>Add Item</button>
         <button id='clear'>Clear</button>
       </div>
-      <div id="viewpen"></div>
-    </div>
-    <div class='view'>
-    </div>
-    <div class='view'>
-    </div>
-    <div class='view'>
-    </div>
+    </section>
+    <section class='model'>
+      MY MODEL
+    </section>
+    <section class='source'>
+      MMVP SOURCE
+    </section>
+    <section class='implementation'>
+      IMPLEMENTATUION
+    </section>
   </section>
 
 </section>

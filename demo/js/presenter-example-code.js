@@ -56,4 +56,21 @@ $(function() {
   $("button#clear").on("click", function() {
     presenter.sync(model = {});
   });
+
+  // Not part of implementation
+  // just for demo page
+  (function tab_switcher() {
+    $("section#demo h2").on("click", function(ev) {
+      if (!$(ev.target).hasClass('active')) {
+        $("section#demo h2.active").removeClass('active');
+        $("section#demo section#switcher section.active").removeClass('active');
+
+        var new_tab = $(ev.target).attr('class');
+        $("section#demo h2." + new_tab).addClass('active');
+        $("section#demo section#switcher section." + new_tab).addClass('active');
+      }
+      //$("section#demo section#switcher
+    });
+  })();
+
 });
