@@ -106,17 +106,31 @@ main section code {
   padding: 3px;
 }
 
-main section#overview {
-  border-bottom: 1px dotted #cfcfcf;
+hr {
+  margin: 30px 0;
+  border: none;
+  border-bottom: 1px dashed #cfcfcf;
+  height: 0px;
+  overflow: hidden;
+  display: block;
 }
 
 main section#demo nav {
+  margin-top: 10px;
   margin-bottom: 10px;
   clear: both;
+  text-align: right;
 }
-main section#demo nav .right {
-  float: right;
+main section#demo nav div {
+  display: inline-block;
 }
+
+main section#demo nav div.app {
+  border-right: 1px dotted #cfcfcf; 
+  margin-right: 10px;
+  padding-right: 10px;
+}
+
 
 main section#demo nav h2 {
   display: inline-block;
@@ -128,9 +142,8 @@ main section#demo nav h2 {
 main section#demo nav h2:first-child {
   padding-left: 0;
 }
-main section#demo nav h2:last-child {
+main section#demo nav.src h2:last-child {
   padding-right: 0;
-  border-right: none
 }
 main section#demo nav h2.active {
   font-weight: bold;
@@ -160,6 +173,10 @@ section#switcher #buttons {
 /* Application View */
 section#switcher section.view {
   text-align: center;
+}
+section#switcher section.view input[type='text'] {
+  font-family: Quattrocento Sans;
+  padding: 4px;
 }
 section#switcher section.view #viewpen {
   font-size: 14px;

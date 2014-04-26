@@ -28,7 +28,7 @@ presenter.set_action({
   },
   add : function(new_model_key, new_model_value) {
     var checked = new_model_value == true ? "checked" : "";
-    var new_div = $("<div><input type='checkbox' " + checked + "><span>" + new_model_value.identifier + "</span></div>");
+    var new_div = $("<div><input type='checkbox' " + checked + "><span>" + new_model_value.text + "</span></div>");
     new_div.attr('id', new_model_key).append(
       $("<button class='remove'>Remove</button>")
     );
@@ -48,17 +48,25 @@ $(function() {
   presenter.initialize();
 
   $("button#add").on("click", function() {
-    var new_key = uuid();
-    var checked = Math.round(Math.random()) == 1;
-    model[new_key] = { identifier : new_key, checked : checked };
-    presenter.sync(model);
-  });
+      });
   $(document).on("click", "button.remove", function(ev) {
     delete model[$(ev.target).parent().attr('id')];
     presenter.sync(model);
   });
   $("button#clear").on("click", function() {
     presenter.sync(model = {});
+  });
+  $("input").on("keypress", function(ev) {
+    if (ev.which == 13) {
+      var u = uuid();
+      console.log($("input").val());
+      model[u] = { 
+        text    : $("input[type='text']").val(), 
+        checked : false 
+      };
+      $("input").val("");
+      presenter.sync(model);
+    }
   });
 
   // Not part of implementation for

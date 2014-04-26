@@ -20,27 +20,28 @@
 <main>
 <section id="overview">
   <h2>Overview</h2>
-  <p>Front-end frameworks <sub>(<a href="#">Backbone</a>, <a href="#">Angular</a>, <a href="#">Ember</a>)</sub> in the process of giving you MV* architecture, bundle DOM buttresses, templating engines, and DOM-presentantion among other artefacts. My question is: should you're MV* framework even know about the DOM?</p>
-  <p>With Mmvp.js, you bind <code>empty</code>, <code>populate</code>, <code>add</code>, <code>remove</code>, and <code>update</code> actions as JS callbacks containing your presentation logic (templating, DOM manipulation, etc) and periodically re-<code>sync</code> the model. That's all there is to it. Mmvp.js, the micro model-view-presenter sans the cruft!</p>
+  <p><a href="#">Front</a>-<a href="#">end</a> <a href="#">frameworks</a>, in process of providing Model-to-View binding architecture, bundle along DOM buttresses, templating engines, UI widgets, among other components. Most front-end framework define <i>how</i> you should and can and should build your application presentation logic.</p>
+  <p>Mmvp.js takes an alternative approach. Aiming for presenter malleability, you bind <code>empty</code>, <code>populate</code>, <code>add</code>, <code>remove</code>, and <code>update</code> callbacks to perform templating, DOM manipulation, and your other presentation logic for when changes in your model occur. Periodically re-<code>sync</code> the presenter, and that's all there is to it.</p>
 </section>
+<hr/>
 <section id="demo">
+  <h2>Demo</h2>
   <nav>
-    <div class='right'>
-      <h2 class='implementation'>Your_Implementation.js</h2>
-      <h2 class='source'>Mmvp.js</h2>
-    </div>
-    <div class='left'>
+    <div class='app'>
       <h2 class='view active'>View</h2>
       <h2 class='model'>Model</h2>
+    </div><div class='src'>
+      <h2 class='implementation'>Todo.js</h2>
+      <h2 class='source'>Mmvp.js</h2>
     </div>
   </nav>
+
   <section id='switcher'>
       
     <section class='view active'>  
       <div id="viewpen"></div>
       <div id='buttons'>
-        <button id='add'>Add Item</button>
-        <button id='clear'>Clear</button>
+        <input type='text' placeholder='Type Here'>
       </div>
     </section>
     <section class='model'>
