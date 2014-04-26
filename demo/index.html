@@ -12,31 +12,45 @@
 </head>
 
 <body>
-<h1>Mmvp.js</h1>
-<p>Writing AJAX for basic REST APIs shouldn't be hard. Also you shouldn't have to include heafty front-end frameworks (see Backbone, Angular, Ember) to simply trigger DOM actions based on changes in a model. So, I made Mmvp.js.</p>
-<p>You bind empty, populate, add, remove, and update actions, which are just callbacks with your DOM manipulations. You periodically resync the model, and you're done. Mmvp is the micro model-view-presenter front-end framework. Please sans the cruft!</p>
-
-<h2>Demo</h2>
-
-<div id='buttons'>
-  <button id='add'>Add a New Item</button>
-  <button id='clear'>Clear Items</button>
-</div>
-
-
-<div id="wrap">
-  <div id="model">
-    <h2>Model</h2>
-    <div id='visual'>
+<nav id='sidebar'>
+  <h1>Mmvp.js</h1>
+  <a href="">Gh</a>
+  <a href="">Minified</a>
+</nav>
+<main>
+<section id="overview">
+  <h2>Overview</h2>
+  <p>Front-end frameworks <sub>(<a href="#">Backbone</a>, <a href="#">Angular</a>, <a href="#">Ember</a>)</sub> in the process of giving you MV* architecture, bundle along things like: DOM manipulation, templating engines, and semantics. Mmvp.js takes a diffrent approach by  cutting off the cruft.</p>
+  <p>With Mmvp.js, you bind <code>empty</code>, <code>populate</code>, <code>add</code>, <code>remove</code>, and <code>update</code> actions (JS callbacks) with your presentation logic (templating, DOM manipulation, etc). You periodically re-<code>sync</code> the model, that's it. Mmvp.js, the micro model-view-presenter sans the cruft!</p>
+</section>
+<section id="demo">
+  <nav>
+    <div class='right'>
+      <h2 class='implementation'>Your_Implementation.js</h2>
+      <h2 class='source'>Mmvp.js</h2>
     </div>
-  </div>
-
-  <div id="view">
-    <h2>View</h2>
-    <div id="viewpen">
+    <div class='left'>
+      <h2 class='view active'>View</h2>
+      <h2 class='model'>Model</h2>
     </div>
-  </div>
-</div>
+  </nav>
+  <section id='switcher'>
+    <div class='view active'>  
+      <div id='buttons'>
+        <button id='add'>Add Item</button>
+        <button id='clear'>Clear</button>
+      </div>
+      <div id="viewpen"></div>
+    </div>
+    <div class='view'>
+    </div>
+    <div class='view'>
+    </div>
+    <div class='view'>
+    </div>
+  </section>
+
+</section>
 
 </body>
 </html>

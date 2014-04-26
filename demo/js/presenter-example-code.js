@@ -17,7 +17,7 @@ var presenter = new Mmvp();
 presenter.set_action({
   empty : function() {
     $(presenter_dom_identifier).html(
-      "No Items!"
+      "<h3>No Items!</h3><p>Hint: hit the (+) button!</p>"
     );
   },
   populate : function() {
@@ -56,6 +56,4 @@ $(function() {
   $("button#clear").on("click", function() {
     presenter.sync(model = {});
   });
-
-
 });

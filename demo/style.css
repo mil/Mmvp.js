@@ -1,9 +1,150 @@
+/* reset styles */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, nav, summary,
+time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, nav { display: block; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* typography */
+@font-face {
+  font-family: Quattrocento Sans;
+  src: url(ttf/QuattrocentoSans-Regular.ttf);
+}
+@font-face {
+  font-family: Quattrocento Sans;
+  font-weight: bold;
+  src: url(ttf/QuattrocentoSans-Bold.ttf);
+}
+
+/* page styles */
 body {
   padding: 50px;
+  max-width: 400px;
+  margin: 0 auto;
+  font-family: Quattrocento Sans;
+  font-size: 16px;
+  color: #101010;
+  vertical-align: text-bottom;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav#sidebar {
+  padding-right: 20px;
+  float: left;
+  display: inline-block;
+  margin-left: -200px;
+  width: 200px;
+  text-align: right;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+nav#sidebar a {
+  display: inline-block;
+  color: #888888;
+  padding: 2px;
+  margin: 2px 0;
+  font-size: 12px;
+  text-decoration: none;
+}
+nav#sidebar a:hover {
+  color: #002369;
+}
+
+h1 {
+  color: #002369;
+  font-size: 20px;
+  font-weight: normal;
 }
 
 h2 {
+  font-size: 14px;
+  font-weight: bold;
 }
+
+
+main {
+  display: inline-block;
+}
+
+main p {
+  margin: 10px 0;
+  line-height: 20px;
+}
+
+main sub {
+  font-size: 0.6em;
+}
+
+main section {
+  margin-bottom: 20px;
+}
+
+main section code {
+  border: 1px solid #cfcfcf;
+  border-radius: 3px;
+  font-size: 10px;
+  padding: 3px;
+}
+
+main section#overview {
+  border-bottom: 1px dotted #cfcfcf;
+}
+
+main section#demo nav {
+  margin-bottom: 10px;
+  clear: both;
+}
+main section#demo nav .right {
+  float: right;
+}
+
+main section#demo nav h2 {
+  display: inline-block;
+  padding: 0 3px;
+  color: #353535;
+  font-weight: normal;
+}
+main section#demo nav h2:first-child {
+  padding-left: 0;
+}
+main section#demo nav h2:last-child {
+  padding-right: 0;
+  border-right: none
+}
+main section#demo nav h2.active {
+  font-weight: bold;
+}
+
+section#switcher {
+  padding: 10px;
+  border: 1px dotted #cfcfcf;
+}
+section#switcher #buttons {
+  float: right;
+}
+
+
+
+
 #wrap {
   overflow: hidden;
 }
@@ -23,3 +164,8 @@ h2 {
 #wrap #viewpen div {
   display: block;
 }
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
