@@ -157,41 +157,32 @@ section#switcher section.active {
 section#switcher #buttons {
 }
 
+/* Application View */
 section#switcher section.view {
   text-align: center;
 }
 section#switcher section.view #viewpen {
   font-size: 14px;
 }
+section#switcher section.view #viewpen #items-container {
+  padding: 20px;
+}
+section#switcher section.view #viewpen #items-container div {
+  opacity: 0;
+}
+
+section#switcher section.view #no-items {
+  opacity: 0;
+  padding: 20px;
+}
 section#switcher section.view #viewpen p { margin: 0; }
 section#switcher section.view #viewpen h3 {
   font-size: 18px;
 }
 
-
-
-
-#wrap {
-  overflow: hidden;
+section#switcher section.source pre {
+  font-size: 10px;
+  font-family: Monospace;
+  max-width: 378px;
+  overflow-x: scroll;
 }
-#wrap div {
-  display: inline-block;
-}
-#wrap #model {
-  border-right: 1px solid #cfcfcf;
-  width: 49%;
-}
-#wrap #view {
-}
-#wrap #viewpen {
-  text-align: center;
-  border-top: 1px solid #cfcfcf;
-}
-#wrap #viewpen div {
-  display: block;
-}
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-

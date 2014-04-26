@@ -16,20 +16,24 @@ var presenter_dom_identifier = "#viewpen";
 var presenter = new Mmvp();
 presenter.set_action({
   empty : function() {
-    $(presenter_dom_identifier).html(
-      "<h3>No Items!</h3><p>Hint: hit the (+) button!</p>"
+    $("#items-container").remove();
+    $(presenter_dom_identifier).append(
+      "<div id='no-items'><h3>No Items!</h3><p>Hint: hit the (+) button!</p></div>"
     );
+    $("#no-items").animate({opacity : 1 }, 300, 'ease-in');
   },
   populate : function() {
-    $(presenter_dom_identifier).html("");
+    $("#no-items").remove(); 
+    $(presenter_dom_identifier).append("<div id='items-container'></div>");
   },
   add : function(new_model_key, new_model_value) {
-    console.log(new_model_value);
-    var new_div = $("<div></div>");
+    var checked = new_model_value == true ? "checked" : "";
+    var new_div = $("<div><input type='checkbox' " + checked + "><span>" + new_model_value.identifier + "</span></div>");
     new_div.attr('id', new_model_key).append(
       $("<button class='remove'>Remove</button>")
     );
-    $(presenter_dom_identifier).append(new_div);
+    $("#items-container").prepend(new_div);
+    new_div.animate({ opacity: 1 }, 300, 'ease-in');
   },
   remove : function(key_of_removed_item) {
     $("#" + key_of_removed_item).remove();
@@ -57,8 +61,8 @@ $(function() {
     presenter.sync(model = {});
   });
 
-  // Not part of implementation
-  // just for demo page
+  // Not part of implementation for
+  // mmvp, just for demo page
   (function tab_switcher() {
     $("section#demo h2").on("click", function(ev) {
       if (!$(ev.target).hasClass('active')) {
@@ -72,5 +76,4 @@ $(function() {
       //$("section#demo section#switcher
     });
   })();
-
 });
