@@ -1,0 +1,25 @@
+body {
+  padding: 50px;
+}
+
+h2 {
+}
+#wrap {
+  overflow: hidden;
+}
+#wrap div {
+  display: inline-block;
+}
+#wrap #model {
+  border-right: 1px solid #cfcfcf;
+  width: 49%;
+}
+#wrap #view {
+}
+#wrap #viewpen {
+  text-align: center;
+  border-top: 1px solid #cfcfcf;
+}
+#wrap #viewpen div {
+  display: block;
+}

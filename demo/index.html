@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<title>Mmvp Demo</title>
+<link rel='stylesheet' href='style.css' />
+
+<script type='text/javascript' src='../underscore.min.js'></script>
+<script type='text/javascript' src='../mmvp.js'></script>
+
+<script type='text/javascript' src='js/zepto.js'></script>
+<script type='text/javascript' src='js/presenter-example-code.js'></script>
+</head>
+
+<body>
+<h1>Mmvp.js</h1>
+<p>Writing AJAX for basic REST APIs shouldn't be hard. Also you shouldn't have to include heafty front-end frameworks (see Backbone, Angular, Ember) to simply trigger DOM actions based on changes in a model. So, I made Mmvp.js.</p>
+<p>You bind empty, populate, add, remove, and update actions, which are just callbacks with your DOM manipulations. You periodically resync the model, and you're done. Mmvp is the micro model-view-presenter front-end framework. Please sans the cruft!</p>
+
+<h2>Demo</h2>
+
+<div id='buttons'>
+  <button id='add'>Add a New Item</button>
+  <button id='clear'>Clear Items</button>
+</div>
+
+
+<div id="wrap">
+  <div id="model">
+    <h2>Model</h2>
+    <div id='visual'>
+    </div>
+  </div>
+
+  <div id="view">
+    <h2>View</h2>
+    <div id="viewpen">
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
