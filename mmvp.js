@@ -33,13 +33,14 @@ var Mmvp = (function(my) {
     return true;
   }
   return {
+    sync       : sync,
+    get_model  : function() { return model; },
     initialize : function() { actions.empty(); },
     set_action : function(new_hash) {
       if (actions['add']) { actions.add = new_hash.add; }
       if (actions['remove']) { actions.remove = new_hash.remove; }
       if (actions['populate']) { actions.populate = new_hash.populate; }
       if (actions['empty']) { actions.empty = new_hash.empty; }
-    },
-    sync : sync
+    }
   };
 });
