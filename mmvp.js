@@ -1,3 +1,4 @@
+// dep: _.js
 var Mmvp = (function(my) {
   var actions = {
     add      : function() {},
