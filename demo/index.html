@@ -25,16 +25,11 @@
   <h2>Abstract</h2>
   <p><a href="#">Mmvp.js</a> is an micro-MVP library which holds the view to be essentially ephemeral&hellip; to be exclusivly created &amp; updated through presenter callbacks.  In effect, all DOM manipulation, templating, &amp; animation logic lives in several presenter callbacks (<code>empty</code>, <code>populate</code>, <code>add</code>, <code>remove</code>, &amp; <code>update</code>).</p>
 
-  <p>When the model is modified, the corresponding presenter callback(s) are triggered.  <a href="#">Mmvp.js</a> belives M&rarr;V architecture itself should be completly decoupled from the DOM.  Infact, Mmv(P).js, on its own, does not even know the DOM exists.  P framework should exist simply as glue to affix view generating P callbacks to model changes.</p>
-
-
+  <p>When the model is modified, the corresponding presenter callback(s) are triggered. <a href="#">Mmvp.js</a> belives M&rarr;V architecture itself should be completly decoupled from the DOM.  Infact, Mmv(P).js, on its own, does not even know the DOM exists.  P framework should exist simply as glue to affix view generating P callbacks to model changes.</p>
 </section>
-
 <section id="demo">
   <h2>Demo</h2>
-  <p>Here's the archetypal TodoMVC demo using Mmvp.js. The <a href="#">demo code</a> (56 SLOC) for it's implementation is slightly heavier than the <a href="#">Mmvp.js framework code</a> itself (44 SLOC).</p>
-  </p>
-
+  <p>Here's the archetypal TodoMVC demo using Mmvp.js. The <a id='todo-src' href="#">demo code</a> (56 SLOC) for it's implementation is slightly heavier than the <a id='mmvp-src' href="#">Mmvp.js framework code</a> itself (44 SLOC).</p>
   <section id='switcher'> 
     <section class='view active'>  
       <div id="viewpen"></div>
@@ -43,28 +38,22 @@
       </div>
     </section>
     <section class='model'>
-      <pre class='brush: js;'>
+      <pre class='brush: js; toolbar: false;'>
       </pre>
     </section>
   </section>
-
-
-  <nav>
-    <h3 class='view active'>View</h3>
-    <h3 class='model'>Model</h3>
-  </nav>
-
-
-
-
-
+  <nav><h3 class='view active'>View</h3><h3 class='model'>Model</h3></nav>
 </section>
 
 
 <div id='code'>
-  <section class='source'>
+  <link rel='stylesheet' href='css/style.css' />
+  <link rel='stylesheet' href='css/shCoreDefault.css' />
+  <link rel='stylesheet' href='css/source.css' />
+  <nav><h3 class='todo'>Todo.js</h3><h3 class='mmvp'>Mmvp.js</h3></nav>
+  <section class='source mmvp'>
     <a href="">plain</a>
-    <pre class='brush: js;'>
+    <pre class='brush: js; toolbar: false;'>
 var Mmvp = (function(my) {
   var actions = {
     add      : function() {},
@@ -77,7 +66,7 @@ var Mmvp = (function(my) {
 
   function sync(hash_with_unique_keys) { 
     var add_items = _.omit(hash_with_unique_keys, _.keys(model));
-    var remove_items = _.omit(model, _.keys(hash_with_unique_keys));
+    var remove_itemsdemo = _.omit(model, _.keys(hash_with_unique_keys));
 
     _.each(_.pick(model, _.keys(hash_with_unique_keys)), function(v,k) {
       _.each(_.keys(model[k]), function(key) {
@@ -111,9 +100,9 @@ var Mmvp = (function(my) {
 });
     </pre>
   </section>
-  <section class='implementation'>
+  <section class='source todo'>
     <a href="">plain</a>
-    <pre class='brush: js;'>
+    <pre class='brush: js; toolbar: false;'>
 // uuid sourced from: http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript
 function uuid() {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -181,8 +170,6 @@ $(function() {
     </pre>
   </section>
 </div>
-
-
 
 </body>
 </html>

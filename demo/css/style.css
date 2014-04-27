@@ -164,7 +164,7 @@ main section#demo nav div.app {
   font-size: 10px;
 }
 
-main section#demo nav h3 {
+h3 {
   display: inline-block;
   padding: 0;
   margin-left: 10px;
@@ -174,13 +174,8 @@ main section#demo nav h3 {
   width: auto;
   border: none;
 }
-main section#demo nav h3:first-child {
-  padding-left: 0;
-}
-main section#demo nav.src h3:last-child {
-  padding-right: 0;
-}
-main section#demo nav h3.active {
+
+h3.active, #code-window.mmvp h3.mmvp, #code-window.todo h3.todo {
   font-weight: bold;
   color: #333;
 }
@@ -213,6 +208,7 @@ section#switcher section.view input[type='text'] {
 }
 
 .syntaxhighlighter.js { width: 360px !important; }
+.code .syntaxhighlighter.js { width: 100% !important; }
 
 section#switcher section.view #viewpen div {
   vertical-align: baseline;
@@ -282,6 +278,5 @@ section#switcher section.source a, section#switcher section.implementation a {
   float: right;
   font-size: 10px;
 }
-
 
 #code { display: none; }
