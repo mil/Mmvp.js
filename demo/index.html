@@ -2,19 +2,20 @@
 <html>
 <head>
 <title>Mmvp Demo</title>
-<link rel='stylesheet' href='style.css' />
 
 <script type='text/javascript' src='../underscore.min.js'></script>
 <script type='text/javascript' src='../mmvp.js'></script>
 
-<script type='text/javascript' src='js/zepto.js'></script>
+<script type='text/javascript' src='js/lib/zepto.js'></script>
+<script type='text/javascript' src='js/lib/shCore.js'></script>
+<script type='text/javascript' src='js/lib/shBrushJScript.js'></script>
 <script type='text/javascript' src='js/presenter-example-code.js'></script>
+
+<link rel='stylesheet' href='css/style.css' />
+<link rel='stylesheet' href='css/shCoreDefault.css' />
 </head>
 
 <body>
-<nav id='sidebar'>
-  
-</nav>
 <main>
   <h1>Mmvp.js</h1>
   <span class='subline'>(&micro;) model view presenter library</span>
@@ -23,7 +24,7 @@
   <div class='sidebar'>
     <h2>Abstract</h2>
   </div>
-  <p><a href="#">Front</a>-<a href="#">end</a> <a href="#">frameworks</a>, in process of providing Model-to-View binding architecture, bundle along DOM buttresses, templating engines, UI widgets, among other components. In effect this defines <i>how</i> you build application's presenter and animation logic.</p>
+  <p><a href="#">Front</a>-<a href="#">end</a> <a href="#">frameworks</a>, in process of providing model-to-view binding architecture, bundle along things like DOM buttresses, templating engines, and UI widgets. In effect, <i>how</i> you build application's UI, presenters, and animation logic is (de)fined.</p>
   <p><a href="http://github.com/mil/mmvp.js">Mmvp.js</a> takes an alternative approach. Aiming for presenter malleability, you bind <code>empty</code>, <code>populate</code>, <code>add</code>, <code>remove</code>, and <code>update</code> callbacks to perform templating, DOM manipulation, and your other presentation logic for when changes in your model occur. Periodically re-<code>sync</code> the presenter, and that's pretty much it.</p>
 </section>
 <section id="demo">
@@ -53,7 +54,8 @@
       MY MODEL
     </section>
     <section class='source'>
-      <pre>
+      <a href="">plain</a>
+      <pre class='brush: js;'>
 var Mmvp = (function(my) {
   var actions = {
     add      : function() {},

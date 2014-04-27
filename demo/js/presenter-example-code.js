@@ -102,6 +102,9 @@ $(function() {
     }
   });
 
+  (function syntax_highlighter() {
+    SyntaxHighlighter.all();
+  })();
   // Not part of implementation for
   // mmvp, just for demo page
   (function tab_switcher() {

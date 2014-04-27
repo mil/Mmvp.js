@@ -22,12 +22,17 @@ table { border-collapse: collapse; border-spacing: 0; }
 /* typography */
 @font-face {
   font-family: Quattrocento Sans;
-  src: url(ttf/QuattrocentoSans-Regular.ttf);
+  src: url(../ttf/QuattrocentoSans-Regular.ttf);
 }
 @font-face {
   font-family: Quattrocento Sans;
   font-weight: bold;
-  src: url(ttf/QuattrocentoSans-Bold.ttf);
+  src: url(../ttf/QuattrocentoSans-Bold.ttf);
+}
+@font-face {
+  font-family: Quattrocento Sans;
+  font-style: italic;
+  src: url(../ttf/QuattrocentoSans-Italic.ttf);
 }
 
 /* page styles */
@@ -40,6 +45,7 @@ body {
   color: #101010;
   vertical-align: text-bottom;
 }
+i, em { font-style: italic; }
 
 a {
   text-decoration: none;
@@ -270,4 +276,8 @@ section#switcher section pre {
   font-family: Monospace;
   max-width: 378px;
   overflow-x: auto;
+}
+section#switcher section.source a {
+  float: right;
+  font-size: 10px;
 }
