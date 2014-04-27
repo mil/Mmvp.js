@@ -38,7 +38,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 /* page styles */
 body {
   padding: 50px;
-  max-width: 400px;
+  max-width: 360px;
   margin: 0 auto;
   font-family: Quattrocento Sans;
   font-size: 14px;
@@ -56,13 +56,20 @@ a:hover {
   border-bottom: 1px dotted #001848;
 }
 
-nav#sidebar {
+h2 {
   padding-right: 20px;
   float: left;
   display: inline-block;
-  margin-left: -200px;
-  width: 200px;
+  margin-left: -120px;
+  width: 100px;
   text-align: right;
+
+  font-size: 14px;
+  font-weight: bold;
+  border-right: 1px dotted #cfcfcf;
+  padding-right: 20px;
+  margin-right: 20px;
+
 
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -90,10 +97,6 @@ span.subline {
 }
 
 h2 {
-  font-size: 14px;
-  font-weight: bold;
-  border-right: 1px dotted #cfcfcf;
-  padding-right: 20px;
 }
 
 
@@ -139,6 +142,8 @@ hr {
 
 main section#demo nav {
   line-height: 16px;
+  text-align: right;
+  border-bottom: 1px dotted #cfcfcf;
 }
 main section#demo nav div {
   display: inline-block;
@@ -160,24 +165,24 @@ main section#demo nav div.app {
   font-size: 10px;
 }
 
-main section#demo nav h2 {
+main section#demo nav h3 {
   display: inline-block;
   padding: 0;
   padding-bottom: 4px;
-  margin-right: 10px;
+  margin-left: 10px;
   color: #c1c1c1;
   font-weight: normal;
   cursor: pointer;
   width: auto;
   border: none;
 }
-main section#demo nav h2:first-child {
+main section#demo nav h3:first-child {
   padding-left: 0;
 }
-main section#demo nav.src h2:last-child {
+main section#demo nav.src h3:last-child {
   padding-right: 0;
 }
-main section#demo nav h2.active {
+main section#demo nav h3.active {
   font-weight: bold;
   color: #333;
   border-bottom: 1px dotted #cfcfcf;
@@ -269,13 +274,6 @@ section#switcher section.view #viewpen p {
 }
 section#switcher section.view #viewpen h3 {
   font-size: 14px;
-}
-
-section#switcher section pre {
-  font-size: 10px;
-  font-family: Monospace;
-  max-width: 378px;
-  overflow-x: auto;
 }
 section#switcher section.source a, section#switcher section.implementation a {
   float: right;

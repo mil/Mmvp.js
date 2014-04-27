@@ -38,6 +38,9 @@ function pp_model() {
 
   return recurse_obj(todo_model, 0);
 }
+function lightbox(selector_to_activate) {
+
+}
 
 
 // This is the most basic code you could use
@@ -77,40 +80,42 @@ presenter.set_action({
 $(function() {
   presenter.initialize();
 
-  $(document).on("click", "button.remove", function(ev) {
-    delete todo_model[$(ev.target).parent().attr('id')];
-    presenter.sync(todo_model);
-  });
-  $(document).on("click", "input[type='checkbox']", function(ev) {
-    var is_checked = $(ev.target).is(":checked");
-    todo_model[$(ev.target).parent().attr("id")]['checked'] = is_checked;
-    presenter.sync(todo_model);
-  });
-  $("button#clear").on("click", function() {
-    presenter.sync(todo_model = {});
-  });
-  $("input").on("keypress", function(ev) {
-    if (ev.which == 13) {
-      var u = uuid();
-      todo_model[u] = { 
-        text    : $("input[type='text']").val(), 
-        checked : false 
-      };
-      $("input").val("");
+  (function ui_callbacks() {
+    // Remove Todo Button
+    $(document).on("click", "button.remove", function(ev) {
+      delete todo_model[$(ev.target).parent().attr('id')];
       presenter.sync(todo_model);
-    }
-  });
+    });
+    // Checkmark Todo
+    $(document).on("click", "input[type='checkbox']", function(ev) {
+      var is_checked = $(ev.target).is(":checked");
+      todo_model[$(ev.target).parent().attr("id")]['checked'] = is_checked;
+      presenter.sync(todo_model);
+    });
+    // Add a New Todo
+    $("input").on("keypress", function(ev) {
+      if (ev.which == 13) {
+        var u = uuid();
+        todo_model[u] = { 
+          text    : $("input[type='text']").val(), 
+          checked : false 
+        };
+        $("input").val("");
+        presenter.sync(todo_model);
+      }
+    });
+  })();
 
   // Not part of todo implementation for mmvp, just for demo page
   (function syntax_highlighter() {
     SyntaxHighlighter.all();
   })();
   (function tab_switcher() {
-    $("section#demo h2").on("click", function(ev) {
+    $("section#demo h3").on("click", function(ev) {
       if (!$(ev.target).hasClass('active')) {
 
 
-        $("section#demo h2.active").removeClass('active');
+        $("section#demo h3.active").removeClass('active');
         $("section#demo section#switcher section.active").removeClass('active');
 
         var new_tab = $(ev.target).attr('class');
@@ -119,7 +124,7 @@ $(function() {
           SyntaxHighlighter.highlight();
         }
 
-        $("section#demo h2." + new_tab).addClass('active');
+        $("section#demo h3." + new_tab).addClass('active');
         $("section#demo section#switcher section." + new_tab).addClass('active');
 
       }

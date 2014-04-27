@@ -17,31 +17,23 @@
 
 <body>
 <main>
-  <h1>Mmvp.js</h1>
-  <span class='subline'>(&micro;) model view presenter library</span>
+<h1>Mmvp.js</h1>
+<span class='subline'>(&micro;) model view presenter library</span>
 
 <section id="overview">
-  <div class='sidebar'>
-    <h2>Abstract</h2>
-  </div>
-  <p><a href="#">Front</a>-<a href="#">end</a> <a href="#">frameworks</a>, in process of providing model-to-view binding architecture, bundle along things like DOM buttresses, templating engines, and UI widgets. In effect, <i>how</i> you build application's UI, presenters, and animation logic is (de)fined.</p>
-  <p><a href="http://github.com/mil/mmvp.js">Mmvp.js</a> takes an alternative approach. Aiming for presenter malleability, you bind <code>empty</code>, <code>populate</code>, <code>add</code>, <code>remove</code>, and <code>update</code> callbacks to perform templating, DOM manipulation, and your other presentation logic for when changes in your model occur. Periodically re-<code>sync</code> the presenter, and that's pretty much it.</p>
+  <h2>Abstract</h2>
+  <p><a href="#">Mmvp.js</a> is an micro-MVP library which holds the view to be essentially ephemeral&hellip; to be exclusivly created &amp; updated through presenter callbacks.  In effect, all DOM manipulation, templating, &amp; animation logic lives in several presenter callbacks (<code>empty</code>, <code>populate</code>, <code>add</code>, <code>remove</code>, &amp; <code>update</code>).</p>
+  
+  <p>When the model is modified, the corresponding presenter callback(s) are triggered.  <a href="#">Mmvp.js</a> belives M&rarr;V architecture itself should be completly decoupled from the DOM.  Infact, Mmv(P).js, on its own, does not even know the DOM exists.  P framework should exist simply as glue to affix view generating P callbacks to model changes.</p>
+
+
 </section>
+
+
 <section id="demo">
-  <div class='sidebar'>
-    <h2>Demo</h2>
-  </div>
-    <nav>
-      <div class='app'>
-        <h2 class='view active'>View</h2>
-        <h2 class='model'>Model</h2>
-      </div><div class='src'>
-        <h2 class='implementation'>Todo.js</h2>
-        <h2 class='source'>Mmvp.js</h2>
-      </div>
-    </nav>
-
-
+  <h2>Demo</h2>
+  <p>Here's the archetypal TodoMVC demo using Mmvp.js. The <a href="#">demo code</a> (56 SLOC) for it's implementation is slightly heavier than the <a href="#">Mmvp.js framework code</a> itself (44 SLOC).</p>
+  </p>
 
   <section id='switcher'> 
     <section class='view active'>  
@@ -51,7 +43,8 @@
       </div>
     </section>
     <section class='model'>
-      <pre class='brush: js;'></pre>
+      <pre class='brush: js;'>
+      </pre>
     </section>
     <section class='source'>
       <a href="">plain</a>
@@ -173,8 +166,23 @@ $(function() {
     </section>
   </section>
 
+
+  <nav>
+    <h3 class='view active'>View</h3>
+    <h3 class='model'>Model</h3>
+    <!--
+    <div class='src'>
+      <h3 class='implementation'>Todo.js</h3>
+      <h3 class='source'>Mmvp.js</h3>
+    </div>
+    --!>
+  </nav>
+
+
+
+
+
 </section>
 
 </body>
 </html>
-
