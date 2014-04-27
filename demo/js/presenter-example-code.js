@@ -74,8 +74,12 @@ presenter.set_action({
   remove : function(key_of_removed_item) {
     $("#" + key_of_removed_item).remove();
   },
-  update : function(key_of_updated_model) {
-    console.log("RUNNINg update action");
+  update : function(key_of_updated_model, updated_model_value) {
+    if (updated_model_value.checked) {
+      $("#" + key_of_updated_model).addClass("strikethrough");
+    } else {
+      $("#" + key_of_updated_model).removeClass("strikethrough");
+    }
   }
 });
 // Zepto's version of document.onload

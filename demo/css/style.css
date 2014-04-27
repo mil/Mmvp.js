@@ -247,6 +247,10 @@ section#switcher section.view #viewpen #items-container div span {
   text-align: left;
   display: inline-block;
 }
+section#switcher section.view #viewpen #items-container div.strikethrough span {
+  text-decoration: line-through;
+}
+
 section#switcher section.view #viewpen #items-container div button {
   margin: 0;
   padding: 0;
