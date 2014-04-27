@@ -51,7 +51,7 @@
       </div>
     </section>
     <section class='model'>
-      MY MODEL
+      <pre class='brush: js;'></pre>
     </section>
     <section class='source'>
       <a href="">plain</a>
@@ -103,7 +103,73 @@ var Mmvp = (function(my) {
       </pre>
     </section>
     <section class='implementation'>
-      IMPLEMENTATUION
+      <a href="">plain</a>
+      <pre class='brush: js;'>
+// uuid sourced from: http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript
+function uuid() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+    return v.toString(16);
+  });
+}
+var todo_model = {}, presenter_dom_identifier = "#viewpen"; var presenter = new Mmvp();
+presenter.set_action({
+  empty : function() {
+    $("#items-container").remove();
+    $(presenter_dom_identifier).append(
+      "&lt;div id='no-items'&gt;&lt;h3&gt;No Items!&lt;/h3&gt;&lt;p&gt;Hint: Add a new item.&lt;/p&gt;&lt;/div&gt;"
+    );
+    $("#no-items").animate({opacity : 1 }, 300, 'ease-in');
+  },
+  populate : function() {
+    $("#no-items").remove(); 
+    $(presenter_dom_identifier).append("&lt;div id='items-container'&gt;&lt;/div&gt;");
+  },
+  add : function(new_model_key, new_model_value) {
+    var checked = new_model_value == true ? "checked" : "";
+    var new_div = $("&lt;div&gt;&lt;input type='checkbox' " + checked + "&gt;&lt;span&gt;" + new_model_value.text + "&lt;/span&gt;&lt;/div&gt;");
+    new_div.attr('id', new_model_key).prepend(
+      $("&lt;button class='remove'&gt;&#150;&lt;/button&gt;")
+    );
+    $("#items-container").prepend(new_div);
+    new_div.animate({ opacity: 1 }, 300, 'ease-in');
+  },
+  remove : function(key_of_removed_item) {
+    $("#" + key_of_removed_item).remove();
+  },
+  update : function(key_of_updated_model) {
+    console.log("RUNNINg update action");
+  }
+});
+// Zepto's version of document.onload
+$(function() {
+  presenter.initialize();
+
+  $(document).on("click", "button.remove", function(ev) {
+    delete todo_model[$(ev.target).parent().attr('id')];
+    presenter.sync(todo_model);
+  });
+  $(document).on("click", "input[type='checkbox']", function(ev) {
+    var is_checked = $(ev.target).is(":checked");
+    todo_model[$(ev.target).parent().attr("id")]['checked'] = is_checked;
+    presenter.sync(todo_model);
+  });
+  $("button#clear").on("click", function() {
+    presenter.sync(todo_model = {});
+  });
+  $("input").on("keypress", function(ev) {
+    if (ev.which == 13) {
+      var u = uuid();
+      todo_model[u] = { 
+        text    : $("input[type='text']").val(), 
+        checked : false 
+      };
+      $("input").val("");
+      presenter.sync(todo_model);
+    }
+  });
+});
+      </pre>
     </section>
   </section>
 

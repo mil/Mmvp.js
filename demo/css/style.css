@@ -51,6 +51,10 @@ a {
   text-decoration: none;
   color: #002369;
 }
+a:hover {
+  color: #001848;
+  border-bottom: 1px dotted #001848;
+}
 
 nav#sidebar {
   padding-right: 20px;
@@ -119,8 +123,9 @@ main section {
 main section code {
   border: 1px solid #cfcfcf;
   border-radius: 3px;
-  font-size: 10px;
+  font-size: 12px;
   padding: 3px;
+  color: #4c4c4c;
 }
 
 hr {
@@ -179,23 +184,17 @@ main section#demo nav h2.active {
 }
 
 section#switcher {
-  margin: 15px 0;
-  display: table;
+  margin: 30px 0;
+  display: block;
   width: 100%;
  
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-section#switcher section {
-  display: none;
-}
-section#switcher section.active {
-  display: table-cell;
-  vertical-align: middle;
-}
-section#switcher #buttons {
-}
+section#switcher section { display: none; }
+section#switcher section.active { display: block; }
+section#switcher #buttons { }
 
 /* Application View */
 section#switcher section.view {
@@ -206,7 +205,10 @@ section#switcher section.view input[type='text'] {
   font-family: Quattrocento Sans;
   padding: 4px;
   margin: 0;
+  margin-top: 20px;
 }
+
+.syntaxhighlighter.js { width: 400px !important; }
 
 section#switcher section.view #viewpen div {
   vertical-align: baseline;
@@ -231,7 +233,6 @@ section#switcher section.view #viewpen {
   font-size: 14px;
 }
 section#switcher section.view #viewpen #items-container {
-  padding: 20px 0;
 }
 section#switcher section.view #viewpen #items-container div {
   opacity: 0;
@@ -257,11 +258,10 @@ section#switcher section.view #viewpen #items-container div button:hover {
   cursor: pointer;
   background: #f9f9f9;
 }
-  margin: 0;
 
 section#switcher section.view #no-items {
   opacity: 0;
-  padding: 20px 0;
+  margin-bottom: 0 !important;
 }
 section#switcher section.view #viewpen p { 
   font-size: 10px;
@@ -277,7 +277,7 @@ section#switcher section pre {
   max-width: 378px;
   overflow-x: auto;
 }
-section#switcher section.source a {
+section#switcher section.source a, section#switcher section.implementation a {
   float: right;
   font-size: 10px;
 }
