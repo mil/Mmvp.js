@@ -50,7 +50,7 @@ presenter.set_action({
   empty : function() {
     $("#items-container").remove();
     $(presenter_dom_identifier).append(
-      "<div id='no-items'><h3>No Items!</h3><p>Hint: hit the (+) button!</p></div>"
+      "<div id='no-items'><h3>No Items!</h3><p>Hint: Add a new item.</p></div>"
     );
     $("#no-items").animate({opacity : 1 }, 300, 'ease-in');
   },
@@ -62,7 +62,7 @@ presenter.set_action({
     var checked = new_model_value == true ? "checked" : "";
     var new_div = $("<div><input type='checkbox' " + checked + "><span>" + new_model_value.text + "</span></div>");
     new_div.attr('id', new_model_key).prepend(
-      $("<button class='remove'>-</button>")
+      $("<button class='remove'>&#150;</button>")
     );
     $("#items-container").prepend(new_div);
     new_div.animate({ opacity: 1 }, 300, 'ease-in');

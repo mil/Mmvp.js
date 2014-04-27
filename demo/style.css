@@ -75,6 +75,10 @@ h1 {
   font-weight: normal;
 }
 
+span.subline {
+  font-size: 12px;
+}
+
 h2 {
   font-size: 14px;
   font-weight: bold;
@@ -123,10 +127,7 @@ hr {
 }
 
 main section#demo nav {
-  margin-top: 10px;
-  margin-bottom: 10px;
   line-height: 16px;
-  clear: both;
 }
 main section#demo nav div {
   display: inline-block;
@@ -149,12 +150,15 @@ main section#demo nav div.app {
 }
 
 main section#demo nav h2 {
-  display: block;
-  padding: 0 3px;
+  display: inline-block;
+  padding: 0;
+  padding-bottom: 4px;
+  margin-right: 10px;
   color: #c1c1c1;
   font-weight: normal;
   cursor: pointer;
   width: auto;
+  border: none;
 }
 main section#demo nav h2:first-child {
   padding-left: 0;
@@ -164,12 +168,12 @@ main section#demo nav.src h2:last-child {
 }
 main section#demo nav h2.active {
   font-weight: bold;
-  color: #888888;
+  color: #333;
+  border-bottom: 1px dotted #cfcfcf;
 }
 
 section#switcher {
-  padding: 10px;
-  border: 1px dotted #cfcfcf;
+  margin: 15px 0;
   display: table;
   width: 100%;
  
@@ -183,24 +187,45 @@ section#switcher section {
 section#switcher section.active {
   display: table-cell;
   vertical-align: middle;
-  height: 200px;
 }
 section#switcher #buttons {
 }
 
 /* Application View */
 section#switcher section.view {
-  text-align: center;
+  text-align: left;
+  margin: 0;
 }
 section#switcher section.view input[type='text'] {
   font-family: Quattrocento Sans;
   padding: 4px;
+  margin: 0;
 }
+
+section#switcher section.view #viewpen div {
+  vertical-align: baseline;
+  margin: 10px 0;
+  margin-top: 0;
+}
+section#switcher section.view #viewpen div button,  section#switcher section.view #viewpen div input, section#switcher section.view #viewpen div span 
+{
+  vertical-align: middle;
+}
+section#switcher section.view #viewpen div span  {
+  border-left: 1px dotted #cfcfcf;
+  padding-left: 10px;
+  margin-left: 10px;
+}
+
+section#switcher section.view input[type='checkbox'] {
+  margin: 0;
+}
+
 section#switcher section.view #viewpen {
   font-size: 14px;
 }
 section#switcher section.view #viewpen #items-container {
-  padding: 20px;
+  padding: 20px 0;
 }
 section#switcher section.view #viewpen #items-container div {
   opacity: 0;
@@ -215,16 +240,29 @@ section#switcher section.view #viewpen #items-container div button {
   padding: 0;
   background: none;
   border: none;
-
+  float: right;
+  font-size: 9px;
+  border: 1px solid #cfcfcf;
+  border-radius: 3px;
+  padding: 3px 7px;
+  color: #cfcfcf;
 }
+section#switcher section.view #viewpen #items-container div button:hover {
+  cursor: pointer;
+  background: #f9f9f9;
+}
+  margin: 0;
 
 section#switcher section.view #no-items {
   opacity: 0;
-  padding: 20px;
+  padding: 20px 0;
 }
-section#switcher section.view #viewpen p { margin: 0; }
+section#switcher section.view #viewpen p { 
+  font-size: 10px;
+  margin: 0; 
+}
 section#switcher section.view #viewpen h3 {
-  font-size: 18px;
+  font-size: 14px;
 }
 
 section#switcher section pre {
