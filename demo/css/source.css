@@ -1,0 +1,32 @@
+body#code-window {
+  padding: 10px;
+  max-width: 100%;
+}
+body#code-window .syntaxhighlighter.js {
+  overflow: visible !important;
+  max-width: 100%;
+  width: 100%;
+}
+body#code-window nav { 
+  border-bottom: 1px dotted #cfcfcf; 
+  padding: 20px 0; 
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  background: rgba(255,255,255,0.97);
+  right: 10px;
+  left: 10px;
+}
+body#code-window nav h3 { 
+  display: inline-block;
+  margin-right: 20px;
+}
+#code-window.mmvp h3.mmvp, #code-window.todo h3.todo { 
+  font-weight: bold; color: #333; 
+}
+
+
+body#code-window section.source { display: none; margin-top: 60px; }
+body#code-window.todo section.source.todo { display: block; }
+body#code-window.mmvp section.source.mmvp { display: block; }
+body#code-window a { float: right; }
