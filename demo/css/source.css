@@ -9,20 +9,24 @@ body#code-window .syntaxhighlighter.js {
 }
 body#code-window nav { 
   border-bottom: 1px dotted #cfcfcf; 
-  padding: 20px 0; 
   position: fixed;
   z-index: 10000;
   top: 0;
   background: rgba(255,255,255,0.97);
-  right: 10px;
-  left: 10px;
+  right: 0;
+  left: 0
 }
 body#code-window nav h3 { 
   display: inline-block;
-  margin-right: 20px;
+  padding: 20px;
+  margin: 0;
 }
 #code-window.mmvp h3.mmvp, #code-window.todo h3.todo { 
-  font-weight: bold; color: #333; 
+  font-weight: bold; 
+  color: #333; 
+  background: #f7f7f7;
+  border-left: 1px dotted #cfcfcf;
+  border-right: 1px dotted #cfcfcf;
 }
 
 
