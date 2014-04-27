@@ -14,7 +14,6 @@ function pp_model() {
     for (var i = 0; i < number; i++) {
       sp = sp + " ";
     }
-    console.log("SPACES", sp.length);
     return sp;
   }
 
@@ -38,13 +37,13 @@ function pp_model() {
     return ret;
   }
 
-  return recurse_obj(model, 0);
+  return recurse_obj(todo_model, 0);
 }
 
 
 // This is the most basic code you could use
 // to set up an Mmvp instance.
-var model = {};
+var todo_model = {};
 var presenter_dom_identifier = "#viewpen";
 var presenter = new Mmvp();
 presenter.set_action({
@@ -79,25 +78,27 @@ presenter.set_action({
 $(function() {
   presenter.initialize();
 
-  $("button#add").on("click", function() {
-      });
   $(document).on("click", "button.remove", function(ev) {
-    delete model[$(ev.target).parent().attr('id')];
-    presenter.sync(model);
+    delete todo_model[$(ev.target).parent().attr('id')];
+    presenter.sync(todo_model);
+  });
+  $(document).on("click", "input[type='checkbox']", function(ev) {
+    var is_checked = $(ev.target).is(":checked");
+    todo_model[$(ev.target).parent().attr("id")]['checked'] = is_checked;
+    presenter.sync(todo_model);
   });
   $("button#clear").on("click", function() {
-    presenter.sync(model = {});
+    presenter.sync(todo_model = {});
   });
   $("input").on("keypress", function(ev) {
     if (ev.which == 13) {
       var u = uuid();
-      console.log($("input").val());
-      model[u] = { 
+      todo_model[u] = { 
         text    : $("input[type='text']").val(), 
         checked : false 
       };
       $("input").val("");
-      presenter.sync(model);
+      presenter.sync(todo_model);
     }
   });
 
