@@ -142,7 +142,8 @@ hr {
 
 main section#demo nav {
   line-height: 16px;
-  text-align: right;
+  text-align: left;
+  border-bottom: 1px dotted #cfcfcf;
 }
 main section#demo nav div {
   display: inline-block;
@@ -167,12 +168,14 @@ main section#demo nav div.app {
 h3 {
   display: inline-block;
   padding: 0;
-  margin-left: 10px;
+  margin-right: 10px;
   color: #c1c1c1;
   font-weight: normal;
   cursor: pointer;
   width: auto;
   border: none;
+  position: relative;
+  padding-bottom: 12px;
 }
 
 h3.active, #code-window.mmvp h3.mmvp, #code-window.todo h3.todo {
@@ -180,11 +183,39 @@ h3.active, #code-window.mmvp h3.mmvp, #code-window.todo h3.todo {
   color: #333;
 }
 
+h3.active::after, h3.active::before {
+  bottom: 0;
+  left: 50%;
+  border: solid transparent;
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+
+  border-left: 8px dotted;
+  border-right: 8px dotted;
+  border-bottom: 8px dotted;
+  margin-left: -9px;
+}
+
+h3.active::after {
+  border-color: white;
+  border-bottom-color: #cfcfcf;
+  z-index:10000;
+}
+h3.active::before {
+  border-color: transparent;
+  border-bottom-color: white;
+  z-index:100000;
+  top: 18px;
+}
+
+
+
 section#switcher {
-  margin: 15px 0;
+  margin: 0;
   display: block;
   width: 100%;
-  border-bottom: 1px dotted #cfcfcf;
   padding: 30px 0;
  
   -webkit-box-sizing: border-box;
@@ -192,7 +223,9 @@ section#switcher {
   box-sizing: border-box;
 }
 section#switcher section { display: none; }
-section#switcher section.active { display: block; }
+section#switcher section.active { 
+  display: block; 
+}
 section#switcher #buttons { }
 
 /* Application View */
