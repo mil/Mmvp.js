@@ -29,7 +29,7 @@ var Mmvp = (function(my) {
     _.each(add_items, function(value, key) { actions['add'](key, value); });
     _.each(remove_items, function(value, key) { actions['remove'](key, value) });
 
-    model = _.clone(hash_with_unique_keys);
+    model = JSON.parse(JSON.stringify(hash_with_unique_keys));
     return true;
   }
   return {
@@ -40,6 +40,7 @@ var Mmvp = (function(my) {
       if (actions['add']) { actions.add = new_hash.add; }
       if (actions['remove']) { actions.remove = new_hash.remove; }
       if (actions['populate']) { actions.populate = new_hash.populate; }
+      if (actions['update']) { actions.update = new_hash.update; }
       if (actions['empty']) { actions.empty = new_hash.empty; }
     }
   };
