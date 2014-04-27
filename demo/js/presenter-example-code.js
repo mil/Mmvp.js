@@ -38,8 +38,10 @@ function pp_model() {
 
   return recurse_obj(todo_model, 0);
 }
-function lightbox(selector_to_activate) {
-
+function activate_code_window(code_true_implementation_false) {
+  var content = $("#code").html();
+  var new_window = open('', 'Mmvp.js Source', 'height=600,width=600');
+  new_window.document.write(content);
 }
 
 

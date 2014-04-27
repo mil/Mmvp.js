@@ -279,3 +279,6 @@ section#switcher section.source a, section#switcher section.implementation a {
   float: right;
   font-size: 10px;
 }
+
+
+#code { display: none; }
