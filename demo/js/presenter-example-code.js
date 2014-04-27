@@ -8,6 +8,39 @@ function uuid() {
     return v.toString(16);
   });
 }
+function pp_model() {
+  function spaces(number) {
+    var sp = "";
+    for (var i = 0; i < number; i++) {
+      sp = sp + " ";
+    }
+    console.log("SPACES", sp.length);
+    return sp;
+  }
+
+  function recurse_obj(obj, depth) {
+    var ret = spaces(depth) + "{";
+
+    depth += 2;
+    var number_of_keys = 0;
+    for (key in obj) { number_of_keys++; }
+
+    var i = 0;
+    for (key in obj) {
+      ret += "\n" + spaces(depth) + key + " : ";
+      ret += (typeof obj[key] == "object") ? 
+        recurse_obj(obj[key], depth) : obj[key];
+      i++; if (i < number_of_keys) { ret += ","; }
+    }
+
+    depth -= 2
+    ret += "\n" + spaces(depth) + "}";
+    return ret;
+  }
+
+  return recurse_obj(model, 0);
+}
+
 
 // This is the most basic code you could use
 // to set up an Mmvp instance.
@@ -29,8 +62,8 @@ presenter.set_action({
   add : function(new_model_key, new_model_value) {
     var checked = new_model_value == true ? "checked" : "";
     var new_div = $("<div><input type='checkbox' " + checked + "><span>" + new_model_value.text + "</span></div>");
-    new_div.attr('id', new_model_key).append(
-      $("<button class='remove'>Remove</button>")
+    new_div.attr('id', new_model_key).prepend(
+      $("<button class='remove'>-</button>")
     );
     $("#items-container").prepend(new_div);
     new_div.animate({ opacity: 1 }, 300, 'ease-in');
@@ -42,7 +75,6 @@ presenter.set_action({
     console.log("RUNNINg update action");
   }
 });
-
 // Zepto's version of document.onload
 $(function() {
   presenter.initialize();
@@ -80,8 +112,14 @@ $(function() {
         var new_tab = $(ev.target).attr('class');
         $("section#demo h2." + new_tab).addClass('active');
         $("section#demo section#switcher section." + new_tab).addClass('active');
+
+        if (new_tab === 'model') {
+          $("section.model").html("<pre>" + pp_model() + "</pre>");
+
+        }
       }
       //$("section#demo section#switcher
     });
   })();
+ 
 });

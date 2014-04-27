@@ -193,6 +193,18 @@ section#switcher section.view #viewpen #items-container {
 section#switcher section.view #viewpen #items-container div {
   opacity: 0;
 }
+section#switcher section.view #viewpen #items-container div span {
+  width: 200px;
+  text-align: left;
+  display: inline-block;
+}
+section#switcher section.view #viewpen #items-container div button {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+
+}
 
 section#switcher section.view #no-items {
   opacity: 0;
@@ -203,9 +215,9 @@ section#switcher section.view #viewpen h3 {
   font-size: 18px;
 }
 
-section#switcher section.source pre {
+section#switcher section pre {
   font-size: 10px;
   font-family: Monospace;
   max-width: 378px;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
