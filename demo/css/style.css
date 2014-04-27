@@ -217,10 +217,12 @@ section#switcher {
   display: block;
   width: 100%;
   padding: 30px 0;
+  padding-bottom: 5px;
  
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  border-bottom: 1px dotted #cfcfcf;
 }
 section#switcher section { display: none; }
 section#switcher section.active { 
@@ -233,11 +235,31 @@ section#switcher section.view {
   text-align: left;
   margin: 0;
 }
+section#switcher section.model {
+  margin: 0;
+  margin-bottom: 35px;
+}
 section#switcher section.view input[type='text'] {
   font-family: Quattrocento Sans;
   padding: 4px;
   margin: 0;
+  border: none;
+  width: auto;
+  outline: none;
+  padding-left: 0;
+  display: block;
+}
+section#switcher section.view  #newitem span {
+  float: left;
+  line-height: 16px;
+  padding: 3px;
+  padding-left: 4px;
+  padding-right: 22px;
+}
+
+section#switcher section.view  #newitem {
   margin-top: 20px;
+  padding-bottom: 15px;
 }
 
 .syntaxhighlighter.js { width: 360px !important; }
@@ -264,6 +286,7 @@ section#switcher section.view input[type='checkbox'] {
 
 section#switcher section.view #viewpen {
   font-size: 14px;
+  margin-top: 12px;
 }
 section#switcher section.view #viewpen #items-container {
 }

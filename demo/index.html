@@ -23,9 +23,9 @@
 
 <section id="overview">
   <h2>Abstract</h2>
-  <p><a href="#">Mmvp.js</a> is an micro-MVP library which holds the view to be essentially ephemeral&hellip; to be exclusivly created &amp; updated through presenter callbacks.  In effect, all DOM manipulation, templating, &amp; animation logic lives in several presenter callbacks (<code>empty</code>, <code>populate</code>, <code>add</code>, <code>remove</code>, &amp; <code>update</code>).</p>
+  <p><a href="#">Mmvp.js</a> is an micro-MVP library which understands the view as ephemeral&hellip; exclusivly concieved &amp; manipulated through callbacks.  Accordingly, all your DOM manipulation, templating, &amp; animation logic lives in several presenter's callbacks (<code>empty</code>, <code>populate</code>, <code>add</code>, <code>remove</code>, &amp; <code>update</code>).</p>
 
-  <p>When the model is modified, the corresponding presenter callback(s) are triggered. <a href="#">Mmvp.js</a> belives M&rarr;V architecture itself should be completly decoupled from the DOM.  Infact, Mmv(P).js, on its own, does not even know the DOM exists.  P framework should exist simply as glue to affix view generating P callbacks to model changes.</p>
+  <p>When the model is modified, the corresponding presenter callback(s) are triggered. <a href="#">Mmvp.js</a> belives M&rarr;V architecture itself should be completly decoupled from the DOM.  Infact, Mmv(P).js, on its own, does not even know the DOM exists.  P framework exists simply to bind V-generating callbacks to model changes.</p>
 </section>
 <section id="demo">
   <h2>Demo</h2>
@@ -34,8 +34,9 @@
   <section id='switcher'> 
     <section class='view active'>  
       <div id="viewpen"></div>
-      <div id='buttons'>
-        <input type='text' placeholder='Type Here'>
+      <div id='newitem'>
+        <span class='hint'>&raquo;</span>
+        <input type='text' placeholder='Item Name'>
       </div>
     </section>
     <section class='model'>

@@ -11,7 +11,7 @@ presenter.set_action({
   empty : function() {
     $("#items-container").remove();
     $(presenter_dom_identifier).append(
-      "<div id='no-items'><h3>No Items!</h3><p>Hint: Add a new item.</p></div>"
+      "<div id='no-items'><h4>No Items!</h4><p>Hint: Add a new item.</p></div>"
     );
     $("#no-items").animate({opacity : 1 }, 300, 'ease-in');
   },
