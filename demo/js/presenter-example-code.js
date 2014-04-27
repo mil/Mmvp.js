@@ -16,7 +16,6 @@ function pp_model() {
     }
     return sp;
   }
-
   function recurse_obj(obj, depth) {
     var ret = spaces(depth) + "{";
 
@@ -102,27 +101,28 @@ $(function() {
     }
   });
 
+  // Not part of todo implementation for mmvp, just for demo page
   (function syntax_highlighter() {
     SyntaxHighlighter.all();
   })();
-  // Not part of implementation for
-  // mmvp, just for demo page
   (function tab_switcher() {
     $("section#demo h2").on("click", function(ev) {
       if (!$(ev.target).hasClass('active')) {
+
+
         $("section#demo h2.active").removeClass('active');
         $("section#demo section#switcher section.active").removeClass('active');
 
         var new_tab = $(ev.target).attr('class');
+        if (new_tab == 'model') {
+          $("section.model").html("<pre class='brush: js;'>" + pp_model() + "</pre>");
+          SyntaxHighlighter.highlight();
+        }
+
         $("section#demo h2." + new_tab).addClass('active');
         $("section#demo section#switcher section." + new_tab).addClass('active');
 
-        if (new_tab === 'model') {
-          $("section.model").html("<pre>" + pp_model() + "</pre>");
-
-        }
       }
-      //$("section#demo section#switcher
     });
   })();
  
