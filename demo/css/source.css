@@ -6,6 +6,7 @@ body#code-window .syntaxhighlighter.js {
   overflow: visible !important;
   max-width: 100%;
   width: 100%;
+  z-index: -1;
 }
 body#code-window nav { 
   border-bottom: 1px dotted #cfcfcf; 
@@ -33,4 +34,10 @@ body#code-window nav h3 {
 body#code-window section.source { display: none; margin-top: 60px; }
 body#code-window.todo section.source.todo { display: block; }
 body#code-window.mmvp section.source.mmvp { display: block; }
-body#code-window a { float: right; }
+body#code-window a { 
+  float: right; 
+  z-index: 100;
+  font-size: 11px;
+  background: white;
+  padding: 3px;
+}
