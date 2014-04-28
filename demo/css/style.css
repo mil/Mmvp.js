@@ -42,20 +42,20 @@ body {
   margin: 0 auto;
   font-family: Quattrocento Sans;
   font-size: 14px;
-  color: #101010;
+  color: #333333;
   vertical-align: text-bottom;
 }
+main { display: inline-block; }
 i, em { font-style: italic; }
+a { text-decoration: none; color: #002b81; }
+a:hover { color: #001848; border-bottom: 1px dotted #001848; }
 
-a {
-  text-decoration: none;
-  color: #002369;
-}
-a:hover {
-  color: #001848;
-  border-bottom: 1px dotted #001848;
-}
 
+h1 {
+  color: #002b81;
+  font-size: 24px;
+  font-weight: normal;
+}
 h2 {
   padding-right: 20px;
   float: left;
@@ -76,37 +76,8 @@ h2 {
   box-sizing: border-box;
 
 }
-nav#sidebar a {
-  display: inline-block;
-  color: #888888;
-  font-size: 12px;
-  text-decoration: none;
-}
-nav#sidebar a:hover {
-  color: #002369;
-}
 
-h1 {
-  color: #002369;
-  font-size: 24px;
-  font-weight: normal;
-}
-
-span.subline {
-  font-size: 12px;
-}
-
-h2 {
-}
-
-
-a.small {
-  font-size: 12px;
-}
-
-main {
-  display: inline-block;
-}
+span.subline { font-size: 12px; }
 
 main p {
   margin: 10px 0;
@@ -131,40 +102,13 @@ main section code {
   color: #4c4c4c;
 }
 
-hr {
-  margin: 30px 0;
-  border: none;
-  border-bottom: 1px dashed #cfcfcf;
-  height: 0px;
-  overflow: hidden;
-  display: block;
-}
 
+/* Demo Section */
 main section#demo nav {
   line-height: 16px;
   text-align: left;
   border-bottom: 1px dotted #cfcfcf;
 }
-main section#demo nav div {
-  display: inline-block;
-}
-
-main section#demo nav div.app {
-}
-
-
-.sidebar {
-  float: left;
-  width: 80px;
-  margin-left: -100px;
-  text-align: right;
-  padding-right: 20px;
-}
-
-.sidebar nav h2 {
-  font-size: 10px;
-}
-
 h3 {
   display: inline-block;
   padding: 0;
@@ -177,12 +121,10 @@ h3 {
   position: relative;
   padding-bottom: 12px;
 }
-
 h3.active, #code-window.mmvp h3.mmvp, #code-window.todo h3.todo {
   font-weight: bold;
   color: #333;
 }
-
 h3.active::after, h3.active::before {
   bottom: 0;
   left: 50%;
@@ -197,7 +139,6 @@ h3.active::after, h3.active::before {
   border-bottom: 8px dotted;
   margin-left: -9px;
 }
-
 h3.active::after {
   border-color: white;
   border-bottom-color: #cfcfcf;
@@ -209,8 +150,6 @@ h3.active::before {
   z-index:100000;
   top: 18px;
 }
-
-
 
 section#switcher {
   margin: 0;
@@ -225,21 +164,21 @@ section#switcher {
   border-bottom: 1px dotted #cfcfcf;
 }
 section#switcher section { display: none; }
-section#switcher section.active { 
-  display: block; 
+section#switcher section.active { display: block; }
+section#switcher section.view { text-align: left; margin: 0; }
+section#switcher section.model { margin: 0; margin-bottom: 35px; }
+section#switcher section.model .syntaxhighlighter.js { 
+  width: 360px !important; 
+  overflow-x: hidden;
+  overflow-y: visible;
 }
-section#switcher #buttons { }
 
-/* Application View */
-section#switcher section.view {
-  text-align: left;
-  margin: 0;
+/* Text Input for New Items */
+section#switcher section.view  #newitem {
+  margin-top: 20px;
+  padding-bottom: 15px;
 }
-section#switcher section.model {
-  margin: 0;
-  margin-bottom: 35px;
-}
-section#switcher section.view input[type='text'] {
+section#switcher section.view #newitem input[type='text'] {
   font-family: Quattrocento Sans;
   padding: 4px;
   margin: 0;
@@ -257,12 +196,6 @@ section#switcher section.view  #newitem span {
   padding-right: 22px;
 }
 
-section#switcher section.view  #newitem {
-  margin-top: 20px;
-  padding-bottom: 15px;
-}
-
-.syntaxhighlighter.js { width: 360px !important; }
 .code .syntaxhighlighter.js { width: 100% !important; }
 
 section#switcher section.view #viewpen div {
@@ -318,21 +251,16 @@ section#switcher section.view #viewpen #items-container div button:hover {
   cursor: pointer;
   background: #f9f9f9;
 }
-
 section#switcher section.view #no-items {
   opacity: 0;
   margin-bottom: 0 !important;
+  text-align: center;
+}
+section#switcher section.view #viewpen h4 { 
+  font-size: 16px;
 }
 section#switcher section.view #viewpen p { 
-  font-size: 10px;
+  font-size: 12px;
   margin: 0; 
 }
-section#switcher section.view #viewpen h3 {
-  font-size: 14px;
-}
-section#switcher section.source a, section#switcher section.implementation a {
-  float: right;
-  font-size: 10px;
-}
-
 #code { display: none; }
