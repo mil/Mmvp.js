@@ -4,10 +4,10 @@ function uuid() {
     return v.toString(16);
   });
 }
-var todo_model = {};
-var presenter_dom_identifier = "#viewpen";
-var presenter = new Mmvp();
-presenter.set_action({
+
+// Setting up the presenter callbacks
+var todo_model = {}, presenter_dom_identifier = "#viewpen", todo_presenter = new Mmvp();
+todo_presenter.set_action({
   empty : function() {
     $("#items-container").remove();
     $(presenter_dom_identifier).append(
@@ -39,19 +39,21 @@ presenter.set_action({
     }
   }
 });
+
+// Onload
 $(function() {
-  presenter.initialize();
+  todo_presenter.initialize();
   (function ui_callbacks() {
     // Remove Todo Button
     $(document).on("click", "button.remove", function(ev) {
       delete todo_model[$(ev.target).parent().attr('id')];
-      presenter.sync(todo_model);
+      todo_presenter.sync(todo_model);
     });
     // Checkmark Todo
     $(document).on("click", "input[type='checkbox']", function(ev) {
       var is_checked = $(ev.target).is(":checked");
       todo_model[$(ev.target).parent().attr("id")]['checked'] = is_checked;
-      presenter.sync(todo_model);
+      todo_presenter.sync(todo_model);
     });
     // Add a New Todo
     $("input").on("keypress", function(ev) {
@@ -62,7 +64,7 @@ $(function() {
           checked : false 
         };
         $("input").val("");
-        presenter.sync(todo_model);
+        todo_presenter.sync(todo_model);
       }
     });
   })();
