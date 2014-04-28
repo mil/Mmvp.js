@@ -52,6 +52,8 @@ function activate_code_window(mmvp_or_todo) {
   }
 }
 $(function() {
+  $("input[type='text']").focus();
+  $(document).on("click", function() { $("input[type='text']").focus(); });
   (function code_window_callbacks() { 
     $("a#todo-src").on("click", function() { activate_code_window('todo'); return false; });
     $("a#mmvp-src").on("click", function() { activate_code_window('mmvp'); return false; });
