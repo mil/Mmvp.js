@@ -1,13 +1,9 @@
 // dep: _.js
 var Mmvp = (function(my) {
-  var actions = {
-    add      : function() {},
-    remove   : function() {},
-    update   : function() {},
-    populate : function() {},
-    empty    : function() {}
-  }, 
-  model = {};
+  var actions = {}, model = {};
+  _.each(['add', 'remove', 'update', 'populate', 'empty'], function(a) {
+    actions[a] = function() {};
+  });
 
   function sync(hash_with_unique_keys) { 
     var add_items = _.omit(hash_with_unique_keys, _.keys(model));
@@ -23,8 +19,12 @@ var Mmvp = (function(my) {
       });
     });
 
-    if (_.size(hash_with_unique_keys) == 0 && _.size(model) != 0) { actions['empty'](); }
-    if (_.size(model) == 0 && _.size(hash_with_unique_keys) != 0) { actions['populate'](); }
+    if (_.size(hash_with_unique_keys) == 0 && _.size(model) != 0) { 
+      actions['empty'](); 
+    }
+    if (_.size(model) == 0 && _.size(hash_with_unique_keys) != 0) { 
+      actions['populate'](); 
+    }
 
     _.each(add_items, function(value, key) { actions['add'](key, value); });
     _.each(remove_items, function(value, key) { actions['remove'](key, value) });
@@ -37,11 +37,9 @@ var Mmvp = (function(my) {
     get_model  : function() { return model; },
     initialize : function() { actions.empty(); },
     set_action : function(new_hash) {
-      if (actions['add']) { actions.add = new_hash.add; }
-      if (actions['remove']) { actions.remove = new_hash.remove; }
-      if (actions['populate']) { actions.populate = new_hash.populate; }
-      if (actions['update']) { actions.update = new_hash.update; }
-      if (actions['empty']) { actions.empty = new_hash.empty; }
+      _.each(new_hash, function(v,k) {
+        if (actions[k]) { actions[k] = v; }
+      });
     }
   };
 });
