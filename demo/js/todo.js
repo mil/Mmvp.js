@@ -16,7 +16,6 @@ $(function() {
       todo_model[$(ev.target).parent().attr("id")]['checked'] = is_checked;
       todo_presenter.sync(todo_model);
     });
-
     // Add a New Todo
     var item_add_counter = 0;
     $("input").on("keypress", function(ev) {
@@ -68,6 +67,7 @@ $(function() {
         }
     }
   });
+
 
   // Initialize Mmvp Todo Presenter
   todo_presenter.initialize();
