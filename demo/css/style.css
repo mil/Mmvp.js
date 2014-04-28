@@ -169,8 +169,8 @@ section#switcher section.view { text-align: left; margin: 0; }
 section#switcher section.model { margin: 0; margin-bottom: 35px; }
 section#switcher section.model .syntaxhighlighter.js { 
   width: 360px !important; 
-  overflow-x: hidden;
-  overflow-y: visible;
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
 }
 
 /* Text Input for New Items */
