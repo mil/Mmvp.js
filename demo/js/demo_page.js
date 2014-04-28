@@ -32,6 +32,7 @@ function pp_model() {
 function spawn_code_window() {
   var content = $("#code").html();
   code_window = open('', 'Mmvp.js Source', 'height=720,width=720');
+  $("body", code_window.document).html("");
   code_window.document.write(content);
   $("body", code_window.document).attr("id", "code-window");
   $("h3", code_window.document).on("click", function(ev) {
@@ -43,7 +44,7 @@ function spawn_code_window() {
   });
 }
 function activate_code_window(mmvp_or_todo) {
-  if (!code_window) { spawn_code_window(); } 
+  spawn_code_window();
   if (mmvp_or_todo === 'todo') {
     $("body", code_window.document).addClass("todo").removeClass("mmvp");
   } else if (mmvp_or_todo === 'mmvp') {
