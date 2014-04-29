@@ -3,7 +3,7 @@ Mmvp.js
 MVP does not have to be complicated.  Mmvp.js is a proof of concept JS micro MVP library giving you 1-way bindings of callback actions (empty, populate, update, and remove) to changes in a Javascript model. In a real-world application, the model would come from an API (GET) and Mmvp simply acts as the presenter in rendering the view via the callback functions.
 
 [Demo](http://userbound.com/interfaces/Mmvp.js)
-[Source](https://raw.githubusercontent.com/mil/Mmvp.js/master/mmvp.js)
+[Source](https://raw.githubusercontent.com/mil/Mmvp.js/master/Mmvp.js)
 
 
 Using it
