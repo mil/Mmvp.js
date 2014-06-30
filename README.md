@@ -32,7 +32,7 @@ $(function() {
 });
 ```
 
-**Lastly**, periodically resync the model with `.sync(new_model)` when you recieve new JSON representations of your model. For example, say you had a button that when clicked, issues a POST request to your API and recieves back a new model (for the following example as part of the response payload). You might do something like this:
+**Lastly**, periodically resync the model with `.sync(new_model)` when you receive new JSON representations of your model. For example, say you had a button that when clicked, issues a POST request to your API and receives back a new model (for the following example as part of the response payload). You might do something like this:
 ```
 $(".add_button").on("click", function() {
     $.ajax({
