@@ -19,7 +19,7 @@ my_presenter.set_action({
     add : function(added_item_key, add_item_value) {
     },
     update : function(updated_item_key, updated_item_value) {
-    }
+    },
     remove : function(removed_item) {
     }
 });
