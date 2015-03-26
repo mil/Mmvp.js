@@ -11,7 +11,8 @@
     "lodash.size": "3.0.0"
   },
   "devDepencies": {
-    "tape": "3.5.0"
+    "tape": "3.5.0",
+    "uglifyfy": "3.0.13.0.13.0.1"
   },
   "scripts": {
     "test": "node tests.js"
