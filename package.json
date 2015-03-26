@@ -9,5 +9,11 @@
     "lodash.omit": "3.1.0",
     "lodash.pick": "3.1.0",
     "lodash.size": "3.0.0"
+  },
+  "devDepencies": {
+    "tape": "3.5.0"
+  },
+  "scripts": {
+    "test": "node tests.js"
   }
 }

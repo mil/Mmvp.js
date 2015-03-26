@@ -1,4 +1,4 @@
-var clone_deep = require('lodash.clone_deep');
+var clone_deep = require('lodash.clonedeep');
 var for_each = require('lodash.foreach');
 var is_equal = require('lodash.isequal');
 var keys = require('lodash.keys');
@@ -45,10 +45,10 @@ module.exports = function() {
     return true;
   }
   return {
-    sync       : sync,
-    get_model  : function() { return model; },
-    initialize : function() { actions.empty(); },
-    set_action : function(new_hash) {
+    sync: sync,
+    get_model: function() { return model; },
+    initialize: function() { actions.empty(); },
+    set_action: function(new_hash) {
       for_each(new_hash, function(v,k) {
         if (actions[k]) { actions[k] = v; }
       });
