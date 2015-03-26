@@ -1,5 +1,5 @@
 var test = require('tape');
-var mmvp = require('./mmvp.js');
+var mmvp = require('./index.js');
 
 var delay_ms = 300;
 test('mmvp.initialize runs empty action', function(t) {
