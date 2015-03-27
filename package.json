@@ -12,6 +12,7 @@
   },
   "devDepencies": {
     "tape": "3.5.0",
+    "tap-spec": "2.2.2",
     "uglifyfy": "3.0.13.0.13.0.1"
   },
   "scripts": {
