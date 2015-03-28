@@ -17,7 +17,6 @@
     "zuul": "1.0.1"
   },
   "scripts": {
-    "posttest": "node test.js --with-color",
     "test": "zuul --local 8080 test.js"
   }
 }
