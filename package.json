@@ -1,6 +1,6 @@
 {
   "name": "mmvp",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "dependencies": {
     "lodash.clonedeep": "3.0.0",
     "lodash.foreach": "3.0.2",
