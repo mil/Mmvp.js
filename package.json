@@ -12,12 +12,11 @@
     },
   "devDependencies": {
     "tape": "3.5.0",
-    "tap": "0.7.1",
     "tap-spec": "2.2.2",
     "zuul": "2.1.1"
   },
   "scripts": {
-    "pretest": "node tests.js --with-color",
+    "pretest": "node test.js --with-color",
     "test": "zuul --local 8080 test.js"
   }
 }
