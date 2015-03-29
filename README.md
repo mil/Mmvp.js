@@ -2,7 +2,7 @@ Mmvp.js [![Build Status](https://travis-ci.org/mil/Mmvp.js.svg?branch=master)](h
 ========
 > **mmvp.js is going through a rework to become an npm-module capable of browserifying and to also be usable with node proper**... _for the time being, `old/Mmvp.js` is not seasoned and tested, but may fill your needs_
 
-[![Sauce Test Status](https://saucelabs.com/browser-matrix/masandla.svg)](https://saucelabs.com/u/masandla)
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/milessa.svg)](https://saucelabs.com/u/milessa)
 
 Mmvp is a model-to-view sync library for node and in-browser javascript. It exposes a simple API, 
 
