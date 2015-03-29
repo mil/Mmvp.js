@@ -15,6 +15,9 @@
     "tap-spec": "2.2.2",
     "zuul": "2.1.1"
   },
+  "engines" : { 
+    "node" : ">=0.10.3" 
+  },
   "scripts": {
     "pretest": "node test.js --with-color",
     "test": "zuul -- test.js"
