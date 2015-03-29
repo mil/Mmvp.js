@@ -2,12 +2,9 @@ Mmvp.js [![Build Status](https://travis-ci.org/mil/Mmvp.js.svg?branch=master)](h
 ========
 > **mmvp.js is going through a rework to become an npm-module capable of browserifying and to also be usable with node proper**... _for the time being, `old/Mmvp.js` is not seasoned and tested, but may fill your needs_
 
-Mmvp is a javascript microlibrary which provides a a tiny and transparent presenter interface for both node.js and front-end js based applications.  
-
-The Mmvp interface provides you with an api of 3 methods so that you may: initializing a presenter, bind presenter callbacks to be triggered in reaction to changes in a model, and feed in the model.  When the model updates, any bound updates are automatically dispatched.
+Mmvp is a javascript microlibrary which provides an API to create presenters which may bind callback functions (`add`, `remove`, `empty`, `populate`, and `update`) to be triggered in reaction to changes in a model.  The library is tiny, weighing in a 60SLOC and works both in node.js and the browser.
 
 The hello world presenter looks like:
-
 ```js
 var presenter = new Mmvp();
 var model = {};
@@ -25,12 +22,9 @@ presenter.sync(model);
 // console.log reports: key 'item_a' added with value 'hello world'
 ```
 
-Installation
-------------
-npm install, add to package.json, or use build/dist.js in browser.
 
-Api
----
+Usage 
+-----
 ### To Instantiate a Presenter
 ```js
 var my_presenter = new Mmvp();
@@ -51,6 +45,10 @@ my_presenter.sync({
     'hello': 'world'
 })
 ```
+
+
+
+
 
 Contributing
 ------------
