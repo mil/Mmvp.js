@@ -1,59 +1,59 @@
-Mmvp.js [![Build Status](https://travis-ci.org/mil/Mmvp.js.svg?branch=master)](https://travis-ci.org/mil/Mmvp.js)[![Dependency Status](https://gemnasium.com/mil/Mmvp.js.svg)](https://gemnasium.com/mil/Mmvp.js)
+Mmvp.js [![Build Status](https://travis-ci.org/mil/Mmvp.js.svg?branch=master)](https://travis-ci.org/mil/Mmvp.js) [![Dependency Status](https://gemnasium.com/mil/Mmvp.js.svg)](https://gemnasium.com/mil/Mmvp.js)
 ========
 > **mmvp.js is going through a rework to become an npm-module capable of browserifying and to also be usable with node proper**... _for the time being, `old/Mmvp.js` is not seasoned and tested, but may fill your needs_
 
-[![Sauce Test Status](https://saucelabs.com/browser-matrix/milessa.svg?auth=72a439c4bd43950824f2aaa24d0e5859)](https://saucelabs.com/u/milessa)
+Mmvp is a javascript microlibrary which provides a a tiny and transparent presenter interface for both node.js and front-end js based applications.  
 
-Mmvp is a model-to-view sync library for node and in-browser javascript. It exposes a simple API, 
+The Mmvp interface provides you with an api of 3 methods so that you may: initializing a presenter, bind presenter callbacks to be triggered in reaction to changes in a model, and feed in the model.  When the model updates, any bound updates are automatically dispatched.
 
+The hello world presenter looks like:
 
+```js
+var presenter = new Mmvp();
+var model = {};
 
-MVP does not have to be complicated.  Mmvp.js is a proof of concept JS micro MVP library giving you 1-way bindings of callback actions (empty, populate, update, and remove) to changes in a Javascript model. In a real-world application, the model would come from an API (GET) and Mmvp simply acts as the presenter in rendering the view via the callback functions.
-
-[Demo](http://userbound.com/interfaces/Mmvp.js)
-[Source](https://raw.githubusercontent.com/mil/Mmvp.js/master/Mmvp.js)
-
-
-Using it
---------
-**First**, create a new presenter and set your callback functions via the `.set_action({})` method:
-```
-var my_presenter = new Mmvp();
-my_presenter.set_action({
-    empty : function() {
-    },
-    populate : function() {
-    },
-    add : function(added_item_key, add_item_value) {
-    },
-    update : function(updated_item_key, updated_item_value) {
-    },
-    remove : function(removed_item) {
+presenter.set_action({
+    add: function(key, value) {
+        console.log(
+            "key '" + key + "' added with value '" + value + "'"
+        );
     }
 });
+
+model.item_a = "hello world";
+presenter.sync(model);
+// console.log reports: key 'item_a' added with value 'hello world'
 ```
 
-**Next**, when the page loads (JQuery .ready, \<body onload\> etc.), call `.initialize`:
-```
-$(function() {
-    my_presenter.initialize();
-});
+Installation
+------------
+npm install, add to package.json, or use build/dist.js in browser.
+
+Api
+---
+### To Instantiate a Presenter
+```js
+var my_presenter = new Mmvp();
 ```
 
-**Lastly**, periodically resync the model with `.sync(new_model)` when you receive new JSON representations of your model. For example, say you had a button that when clicked, issues a POST request to your API and receives back a new model (for the following example as part of the response payload). You might do something like this:
-```
-$(".add_button").on("click", function() {
-    $.ajax({
-        data: $.("input.name").val(),
-        url: "http://mygreatjson.api",
-        success : function(response) {
-            presenter.sync(response.new_model);
-        }
-    });
-});
+### Presenter.set\_action(_callbacks\_hash_)
+```js
+var my_presenter = new Mmvp();
+my_presenter.set_action({
+    add: function(key, value) {
+    }
+})
 ```
 
-Dependency
-----------
-Mmvp is relies on utility functions provided by [_.js](http://underscorejs.org).
-JQuery or anything like that is not required.
+### Presenter.sync(model\_hash)
+```js
+my_presenter.sync({
+    'hello': 'world'
+})
+```
+
+Contributing
+------------
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/milessa.svg?auth=72a439c4bd43950824f2aaa24d0e5859)](https://saucelabs.com/u/milessa)
+
+Tests are written in Tape.
