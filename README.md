@@ -2,7 +2,9 @@
 
 Mmvp.js 
 ========
-[![Build Status](https://travis-ci.org/mil/Mmvp.js.svg?branch=master)](https://travis-ci.org/mil/Mmvp.js) [![Dependency Status](https://gemnasium.com/mil/Mmvp.js.svg)](https://gemnasium.com/mil/Mmvp.js)
+[![Build Status](https://travis-ci.org/mil/Mmvp.js.svg?branch=master)](https://travis-ci.org/mil/Mmvp.js)
+
+[![Dependency Status](https://gemnasium.com/mil/Mmvp.js.svg)](https://gemnasium.com/mil/Mmvp.js)
 
 Mmvp is a javascript microlibrary which provides an API to create presenters which may bind callback functions (`add`, `remove`, `empty`, `populate`, and `update`) to be triggered in reaction to changes in a model.  The library is tiny, weighing in a 60SLOC and works both in node.js and the browser.
 
