@@ -1,4 +1,4 @@
-Mmvp.js [![Build Status](https://travis-ci.org/mil/Mmvp.js.svg?branch=master)](https://travis-ci.org/mil/Mmvp.js)
+Mmvp.js [![Build Status](https://travis-ci.org/mil/Mmvp.js.svg?branch=master)](https://travis-ci.org/mil/Mmvp.js)[![Dependency Status](https://gemnasium.com/mil/Mmvp.js.svg)](https://gemnasium.com/mil/Mmvp.js)
 ========
 > **mmvp.js is going through a rework to become an npm-module capable of browserifying and to also be usable with node proper**... _for the time being, `old/Mmvp.js` is not seasoned and tested, but may fill your needs_
 
