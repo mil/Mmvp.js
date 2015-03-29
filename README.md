@@ -3,7 +3,8 @@ Mmvp.js [![Build Status](https://travis-ci.org/mil/Mmvp.js.svg?branch=master)](h
 > **mmvp.js is going through a rework to become an npm-module capable of browserifying and to also be usable with node proper**... _for the time being, `old/Mmvp.js` is not seasoned and tested, but may fill your needs_
 
 
-[![Sauce Test Status](https://saucelabs.com/browser-matrix/milessa.svg)](https://saucelabs.com/u/milessa)
+
+[![Sauce Test Status](https://saucelabs.com/buildstatus/milessa)](https://saucelabs.com/u/milessa)
 
 MVP does not have to be complicated.  Mmvp.js is a proof of concept JS micro MVP library giving you 1-way bindings of callback actions (empty, populate, update, and remove) to changes in a Javascript model. In a real-world application, the model would come from an API (GET) and Mmvp simply acts as the presenter in rendering the view via the callback functions.
 
