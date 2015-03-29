@@ -17,6 +17,6 @@
   },
   "scripts": {
     "pretest": "node test.js --with-color",
-    "test": "zuul --local 8080 test.js"
+    "test": "zuul -- test.js"
   }
 }
