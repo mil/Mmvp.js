@@ -12,14 +12,13 @@
     },
   "devDependencies": {
     "tape": "3.5.0",
-    "tap-spec": "2.2.2",
     "zuul": "2.1.1"
   },
   "engines" : { 
     "node" : ">=0.10.3" 
   },
   "scripts": {
-    "pretest": "node tests/run_tests.js --with-color",
+    "pretest": "node tests/run_tests.js",
     "test": "zuul -- tests/run_tests.js"
   }
 }
