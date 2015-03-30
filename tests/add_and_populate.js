@@ -1,7 +1,7 @@
 module.exports = (function(test, mmvp, delay_ms) {
-
-
-  test('add and populate item triggers current add_action', function(t) {
+  var harness = test.createHarness();
+  harness.createStream().pipe(process.stdout);
+  harness('add and populate item triggers current add_action', function(t) {
     t.plan(3);
 
     var p = new mmvp();

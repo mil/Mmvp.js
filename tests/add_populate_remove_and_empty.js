@@ -1,6 +1,8 @@
 module.exports = (function(test, mmvp, delay_ms) {
-  test('add,populate, remove, and empty callbacks work', function(t) {
-    t.plan(4);
+  var harness = test.createHarness();
+  harness.createStream().pipe(process.stdout);
+  harness('add,populate, remove, and empty callbacks work', function(t) {
+    t.plan(6);
     var p = new mmvp();
     var expect_add_key, expect_add_value;
     var expect_remove_key, expect_remove_value;
@@ -28,15 +30,15 @@ module.exports = (function(test, mmvp, delay_ms) {
     });
 
     setTimeout(function() { 
-      console.log(expect_key);
-      t.equal(expect_key, 'mykey', 'Add fn was triggered with proper key');
-      t.equal(expect_value, 'myvalue', 'Add fn was triggered with proper value'); 
-
-
-
       t.equal(populate_fn_has_run, true, 'Populate function fn runs when model becomes populated');
-      t.equal(empty_fn_has_run, true, 'Empty fn runs when model becomes empty');
 
+      t.equal(expect_add_key, 'mykey', 'Add fn was triggered with proper key');
+      t.equal(expect_add_value, 'myvalue', 'Add fn was triggered with proper value'); 
+
+      t.equal(expect_remove_key, 'mykey', 'Remove fn was triggered with proper key');
+      t.equal(expect_remove_value, 'myvalue', 'Remove fn was triggered with proper value'); 
+
+      t.equal(empty_fn_has_run, true, 'Empty fn runs when model becomes empty');
     }, delay_ms);
     p.initialize();
     p.sync({ 'mykey': 'myvalue' });
