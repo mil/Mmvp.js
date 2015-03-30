@@ -19,7 +19,7 @@
     "node" : ">=0.10.3" 
   },
   "scripts": {
-    "pretest": "node test.js --with-color",
-    "test": "zuul -- test.js"
+    "pretest": "node tests/run_tests.js --with-color",
+    "test": "zuul -- tests/run_tests.js"
   }
 }
