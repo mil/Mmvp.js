@@ -1,10 +1,9 @@
-var clone_deep = require('lodash.clonedeep');
+var deep_clone = require('lodash.clonedeep');
 var for_each = require('lodash.foreach');
 var is_equal = require('lodash.isequal');
 var keys = require('lodash.keys');
 var size = require('lodash.size');
 var omit = require('lodash.omit');
-var pick = require('lodash.pick');
 
 module.exports = function() {
   var actions = {}, model = {};
@@ -12,41 +11,39 @@ module.exports = function() {
     actions[a] = function() {};
   });
 
-  function sync(hash_with_unique_keys) { 
-    var add_items = omit(hash_with_unique_keys, keys(model));
-    var remove_items = omit(model, keys(hash_with_unique_keys));
-
-    for_each(pick(model, keys(hash_with_unique_keys)), function(v,k) {
-      var changed = false;
-      if (typeof(model[k] === "object")) {
-        if (is_equal(model[k], hash_with_unique_keys[k])) {
-          changed = true; } } else { if (model[k] != hash_with_unique_keys[k]) {
-          changed = true;
-        }
-      }
-      if (changed) {
-        model[k] = hash_with_unique_keys[k];
-        actions['update'](k,model[k]);
-        return;
+  function values_are_equal(a, b) {
+    if (typeof(a === "object")) {
+      return is_equal(a, b);
+   } else {
+      return a === b;
+    }
+  }
+  function sync(hash_with_unique_keys) {
+    if (size(hash_with_unique_keys) === 0 && size(model) > 0) {
+      actions['empty']();
+    }
+    if (size(model) === 0 && size(hash_with_unique_keys) > 0) {
+      actions['populate']();
+    }
+    for_each(omit(hash_with_unique_keys, keys(model)), function(value, key) {
+      actions['add'](key, value);
+    });
+    var removed_items = omit(model, keys(hash_with_unique_keys));
+    for_each(removed_items, function(value, key) {
+      actions['remove'](key, value);
+    });
+    for_each(omit(model, keys(removed_items)), function(value,key) {
+      if (values_are_equal(model[key], hash_with_unique_keys[key])) {
+        actions['update'](key, hash_with_unique_keys[key]);
       }
     });
-
-    if (size(hash_with_unique_keys) == 0 && size(model) != 0) { 
-      actions['empty'](); 
-    }
-    if (size(model) == 0 && size(hash_with_unique_keys) != 0) { 
-      actions['populate'](); 
-    }
-
-    for_each(remove_items, function(value, key) { actions['remove'](key, value) });
-    for_each(add_items, function(value, key) { actions['add'](key, value); });
-
-    model = clone_deep(hash_with_unique_keys);
-    return true;
+    return model = deep_clone(hash_with_unique_keys);
   }
+
   return {
     sync: sync,
     get_model: function() { return model; },
+    get_action: function() { return actions; },
     initialize: function() { actions.empty(); },
     set_action: function(new_hash) {
       for_each(new_hash, function(v,k) {
