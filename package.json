@@ -6,7 +6,8 @@
     },
   "devDependencies": {
     "tape": "3.5.0",
-    "zuul": "2.1.1"
+    "zuul": "2.1.1",
+    "uglify-js": "2.4.19"
   },
   "engines" : { 
     "node" : ">=0.10.3" 

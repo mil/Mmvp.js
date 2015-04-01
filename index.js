@@ -14,7 +14,7 @@ module.exports = function() {
   function values_are_equal(a, b) {
     if (typeof(a === "object")) {
       return is_equal(a, b);
-   } else {
+    } else {
       return a === b;
     }
   }
