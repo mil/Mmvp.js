@@ -8,17 +8,14 @@ A hello world presenter using Mmvp might look like:
 ```js
 var presenter = new Mmvp(), model = {};
 presenter.set_action({
-    add: function(key, value) {
-        console.log(
-            "key '" + key + "' added with value '" + value + "'"
-        );
-    }
+  add: function(key, value) {
+    console.log("Key [" + key + "] added with value [" + value + "]");
+  }
 });
 model.item_a = "hello world";
 presenter.sync(model);
-
-// console.log reports: 
-// key 'item_a' added with value 'hello world'
+// console.log: 
+// 'key [item_a] added with value [hello world]'
 ```
 
 The Mmvp library itself is tiny (weighing in at rougly 50SLOC), designed to work in the browser and Node.js.
