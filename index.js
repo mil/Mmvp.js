@@ -1,9 +1,9 @@
-var deep_clone = require('lodash.clonedeep');
-var for_each = require('lodash.foreach');
-var is_equal = require('lodash.isequal');
-var keys = require('lodash.keys');
-var size = require('lodash.size');
-var omit = require('lodash.omit');
+var deep_clone = require('lodash/lang/cloneDeep');
+var for_each = require('lodash/collection/forEach');
+var is_equal = require('lodash/lang/isEqual');
+var keys = require('lodash/object/keys');
+var size = require('lodash/collection/size');
+var omit = require('lodash/object/omit');
 
 module.exports = function() {
   var actions = {}, model = {};
