@@ -4,6 +4,7 @@ var is_equal = require('lodash/lang/isEqual');
 var keys = require('lodash/object/keys');
 var size = require('lodash/collection/size');
 var omit = require('lodash/object/omit');
+var difference = require('lodash/array/difference');
 
 module.exports = function() {
   var actions = {}, model = {};
@@ -12,11 +13,7 @@ module.exports = function() {
   });
 
   function values_are_equal(a, b) {
-    if (typeof(a === "object")) {
-      return is_equal(a, b);
-    } else {
-      return a === b;
-    }
+    return typeof(a === "object") ? is_equal(a, b) : (a === b);
   }
   function sync(hash_with_unique_keys) {
     if (size(hash_with_unique_keys) === 0 && size(model) > 0) {
@@ -28,11 +25,11 @@ module.exports = function() {
     for_each(omit(hash_with_unique_keys, keys(model)), function(value, key) {
       actions['add'](key, value);
     });
-    var removed_items = omit(model, keys(hash_with_unique_keys));
-    for_each(removed_items, function(value, key) {
+    for_each(omit(model, keys(hash_with_unique_keys)), function(value, key) {
       actions['remove'](key, value);
+      delete model[key];
     });
-    for_each(omit(model, keys(removed_items)), function(value,key) {
+    for_each(model, function(value, key) {
       if (values_are_equal(model[key], hash_with_unique_keys[key])) {
         actions['update'](key, hash_with_unique_keys[key]);
       }
